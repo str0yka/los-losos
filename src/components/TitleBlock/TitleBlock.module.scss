@@ -1,0 +1,32 @@
+.titleBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 0;
+}
+
+.title {
+  display: flex;
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .titleBlock {
+    padding: 20px 0;
+  }
+
+  .title {
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .titleBlock {
+    padding: 35px 0;
+  }
+
+  .title {
+    gap: 35px;
+  }
+}

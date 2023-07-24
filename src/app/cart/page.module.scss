@@ -1,0 +1,56 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.totalPriceBlock {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+
+  .line {
+    flex-grow: 1;
+    align-self: flex-end;
+    height: 2px;
+
+    border: 1px var(--secondaryColorLight) dashed;
+  }
+}
+
+.skeletonButton {
+  height: 50px;
+}
+
+.confirmButton {
+  position: relative;
+
+  svg {
+    position: absolute;
+    right: calc(50% - 60px);
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: right .2s ease;
+
+    path {
+      fill: var(--secondaryColor);
+    }
+  }
+
+  &:hover {
+    svg {
+      right: calc(50% - 65px);
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .cart {
+    gap: 35px;
+  }
+
+  .title {
+    gap: 30px;
+  }
+}

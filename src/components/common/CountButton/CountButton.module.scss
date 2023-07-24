@@ -1,0 +1,170 @@
+div.skeletonButton {
+  height: 36px;
+
+  background-color: var(--secondaryColorTransparent);
+}
+
+.active {
+  height: 108px;
+}
+
+.nonactive {
+  height: 36px;
+}
+
+.CountButton {
+  position: relative;
+
+  width: 36px;
+  height: 36px;
+
+  border: 1px solid var(--secondaryColorLight);
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  transition: width 0.2s ease;
+
+  div {
+    display: none;
+  }
+
+  &::after,
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 10px;
+    height: 2px;
+
+    border-radius: 1px;
+    background: var(--secondaryColorLight);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  &::before {
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    border: 1px solid var(--secondaryColorLight);
+
+    &::after,
+    &::before {
+      background: var(--secondaryColorLight);
+    }
+  }
+
+  &.Active {
+    display: flex;
+    width: 108px;
+    border: none;
+
+    &::after,
+    &::before {
+      display: none;
+    }
+
+    div {
+      opacity: 1;
+
+      position: relative;
+
+      display: block;
+      width: calc(100% / 3);
+
+      background: var(--primaryColor);
+
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--secondaryColor);
+
+      user-select: none;
+
+      &:hover {
+        background: var(--primaryColorHover);
+      }
+
+      &::after,
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 10px;
+        height: 2px;
+
+        border-radius: 1px;
+        background: var(--secondaryColor);
+      }
+
+      &:first-child {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+
+        &::after {
+          content: "";
+
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      &:nth-child(2n) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          background: var(--primaryColor);
+        }
+      }
+
+      &:last-child {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+        &::after,
+        &::before {
+          content: "";
+        }
+
+        &::after {
+          transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        &::before {
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    animation: disabled 1s ease infinite;
+
+    div {
+      background-color: var(--neutralColorDarken);
+    }
+  }
+}
+
+@keyframes disabled {
+  0% {
+    opacity: 0.75;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.75;
+  }
+}
