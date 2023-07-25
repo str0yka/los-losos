@@ -66,12 +66,12 @@ const Button: React.FC<ButtonProps> = ({
 
   return href ? (
     <Link href={href}>
-      <button className={classes} {...buttonProps} disabled={disabled} type="button">
+      <button className={classes} {...buttonProps} disabled={disabled}>
         {children}
       </button>
     </Link>
   ) : (
-    <button className={classes} {...buttonProps} disabled={disabled} type="button">
+    <button className={classes} {...buttonProps} disabled={disabled}>
       {children}
     </button>
   );

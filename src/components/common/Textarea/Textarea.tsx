@@ -13,7 +13,7 @@ interface TextareaProps extends ComponentProps<'textarea'> {
 }
 
 const Textarea: React.FC<TextareaProps> = ({
- className, maxLength, resize, ...otherProps
+ className, maxLength, resize, onChange, ...otherProps
 }) => {
   const [value, setValue] = useState<string>('');
   const labelClassName = classNames(s.label, className);
@@ -32,7 +32,12 @@ const Textarea: React.FC<TextareaProps> = ({
         className={textareaClassName}
         maxLength={maxLength}
         value={value}
-        onChange={(event) => setValue(event.target.value)}
+        onChange={(event) => {
+          if (onChange) {
+            onChange(event);
+          }
+          setValue(event.target.value);
+        }}
       />
     </label>
   );

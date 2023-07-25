@@ -5,18 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb1147d6-97be-445b-bdbd-7e90d4b13025" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/common/Form/Form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/_components/HomeHeader/ToCartButton/ToCartButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/HomeHeader/ToCartButton/ToCartButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/_components/ProductItem/ProductItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/ProductItem/ProductItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/order/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/order/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DeleteFromCartButton/DeleteFromCartButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DeleteFromCartButton/DeleteFromCartButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Button/Button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Container/Container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Container/Container.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Input/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Input/Input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Skeleton/Skeleton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Skeleton/Skeleton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/_components/OrderForm/OrderForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/order/_components/OrderForm/OrderForm.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +48,13 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\my-projects\5-next-projects\7-los-losos\src\app\@modal\(.)order" />
+      <recent name="D:\my-projects\5-next-projects\7-los-losos\src\app\@modal\(.)order\adress" />
+      <recent name="D:\my-projects\5-next-projects\7-los-losos\src\app\@modal\(.)order\modal" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -69,7 +67,8 @@
       <workItem from="1690202138354" duration="29000" />
       <workItem from="1690203343890" duration="172000" />
       <workItem from="1690271818383" duration="2990000" />
-      <workItem from="1690275129883" duration="12854000" />
+      <workItem from="1690275129883" duration="15110000" />
+      <workItem from="1690291169078" duration="8581000" />
     </task>
     <servers />
   </component>
