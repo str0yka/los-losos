@@ -1,27 +1,19 @@
 .header {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.line {
+  flex-grow: 1;
 
-    max-width: 600px;
+  height: 2px;
 
-    margin: 0 auto;
-  }
+  border: 1px var(--secondaryColorLight) dashed;
 
-  .progressLine {
-    flex-grow: 1;
-
-    height: 2px;
-
-    border: 1px var(--secondaryColorLight) dashed;
-
-    &.previous {
-      border: 1px var(--primaryColor) dashed;
-    }
+  &.previous {
+    border: 1px var(--primaryColor) dashed;
   }
 }

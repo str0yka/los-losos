@@ -38,6 +38,7 @@
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/indent": "off",
     "consistent-return": "off",
     "no-param-reassign": ["error", {
@@ -51,6 +52,7 @@
     }],
     "jsx-a11y/label-has-associated-control": "off",
     "import/no-cycle": "off",
-    "react/no-array-index-key": "off"
+    "react/no-array-index-key": "off",
+    "react/require-default-props": "off"
   }
 }

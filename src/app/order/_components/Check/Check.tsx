@@ -1,5 +1,6 @@
 'use client';
 
+import classNames from 'classnames';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -10,18 +11,24 @@ import { DELIVERY_PRICE, PRICE_FOR_FREE_DELIVERY } from '@/utils';
 
 import s from './Check.module.scss';
 
-const Check = () => {
+interface CheckProps {
+  className?: string
+}
+
+const Check: React.FC<CheckProps> = ({ className }) => {
   const { data, status } = useSelector((state: RootState) => state.cart);
   const promocode = useSelector(
     (state: RootState) => state.promocode.promocode,
   );
   const { promocodeDiscount, totalPrice, totalPriceWithDelivery } = useTotalPrice();
   const isDeliveryFree = totalPrice > PRICE_FOR_FREE_DELIVERY;
+  const skeletonClassName = classNames(s.skeleton, className);
+  const checkClassName = classNames(s.check, className);
 
-  if (status === 'loading/all') return <Skeleton className={s.skeleton} />;
+  if (status === 'loading/all') return <Skeleton className={skeletonClassName} />;
 
   return (
-    <section className={s.check}>
+    <section className={checkClassName}>
       <h5 className={s.title}>Состав заказа</h5>
       <ul className={s.list}>
         {data.map(({ product, count }) => (

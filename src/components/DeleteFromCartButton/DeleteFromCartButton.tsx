@@ -62,6 +62,4 @@ const DeleteFromCartButton: React.FC<DeleteFromCartButtonProps> = ({
   );
 };
 
-DeleteFromCartButton.defaultProps = { id: undefined, className: undefined };
-
 export default DeleteFromCartButton;

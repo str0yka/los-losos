@@ -1,0 +1,69 @@
+.title {
+  font-size: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  margin-top: 15px;
+}
+
+.formItem {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.textarea {
+  height: 100px;
+}
+
+.confirmButton {
+  position: relative;
+
+  svg {
+    position: absolute;
+    right: calc(50% - 100px);
+    top: 50%;
+    transform: translateY(-50%);
+
+    transition: right .2s ease;
+
+    path {
+      fill: var(--secondaryColor);
+    }
+  }
+
+  &:hover {
+    svg {
+      right: calc(50% - 105px);
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .form,
+  .formList {
+    gap: 20px;
+  }
+
+  .formList {
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 960px) {
+  .formItem {
+    display: grid;
+    grid-template-columns: auto 400px;
+    gap: 20px;
+  }
+}

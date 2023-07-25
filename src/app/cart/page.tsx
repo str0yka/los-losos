@@ -56,7 +56,7 @@ const Cart = () => {
           className: s.skeletonButton,
         }}
       >
-        Оформить
+        Перейти к оформлению
         <svg
           width="12"
           height="9"

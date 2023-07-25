@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb1147d6-97be-445b-bdbd-7e90d4b13025" name="Changes" comment="" />
+    <list default="true" id="cb1147d6-97be-445b-bdbd-7e90d4b13025" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/common/Form/Form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/HomeHeader/ToCartButton/ToCartButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/HomeHeader/ToCartButton/ToCartButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/ProductItem/ProductItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/ProductItem/ProductItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/order/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DeleteFromCartButton/DeleteFromCartButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DeleteFromCartButton/DeleteFromCartButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Button/Button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Button/Button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Container/Container.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Container/Container.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Input/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Input/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Skeleton/Skeleton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Skeleton/Skeleton.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myFormatOnlyChangedLines" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,7 +52,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Nikita\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.JavaScript&quot;,
     &quot;ts.external.directory.path&quot;: &quot;D:\\my-projects\\5-next-projects\\7-los-losos\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -52,6 +68,8 @@
       <workItem from="1690197871880" duration="4106000" />
       <workItem from="1690202138354" duration="29000" />
       <workItem from="1690203343890" duration="172000" />
+      <workItem from="1690271818383" duration="2990000" />
+      <workItem from="1690275129883" duration="12854000" />
     </task>
     <servers />
   </component>

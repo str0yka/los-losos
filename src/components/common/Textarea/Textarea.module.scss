@@ -1,0 +1,50 @@
+.label {
+  position: relative;
+
+  font-size: 14px;
+  color: var(--neutralColorDarken);
+
+  &:focus-within {
+    color: var(--neutralColor);
+  }
+}
+
+.textarea {
+  padding: 10px;
+
+  width: 100%;
+  height: 100%;
+
+  background: none;
+  border-radius: 10px;
+  border: 1px var(--secondaryColorLighten) solid;
+  outline: none;
+
+  font-size: inherit;
+  color: inherit;
+
+  &:focus {
+    border: 1px var(--secondaryColorLight) solid;
+  }
+}
+
+.textareaLength {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+
+  color: var(--secondaryColorLight);
+  font-size: inherit;
+}
+
+.x {
+  resize: horizontal;
+}
+
+.y {
+  resize: vertical;
+}
+
+.noResize {
+  resize: none;
+}

@@ -17,6 +17,7 @@ interface ButtonProps extends ComponentProps<'button'> {
   rounded?: boolean;
   hover?: boolean;
   href?: string;
+  disabled?: boolean;
   className?: string;
   children: React.ReactNode;
   buttonProps?: ComponentProps<'button'>;
@@ -27,12 +28,12 @@ interface ButtonProps extends ComponentProps<'button'> {
 }
 
 const Button: React.FC<ButtonProps> = ({
-  variant,
-  textVariant,
-  size,
-  disabled,
-  rounded,
-  hover,
+  variant = 'outlined',
+  textVariant = 'uppercase',
+  size = 'small',
+  disabled = false,
+  rounded = false,
+  hover = true,
   href,
   className,
   loading,
@@ -74,18 +75,6 @@ const Button: React.FC<ButtonProps> = ({
       {children}
     </button>
   );
-};
-
-Button.defaultProps = {
-  variant: 'outlined',
-  textVariant: 'uppercase',
-  size: 'small',
-  rounded: false,
-  hover: true,
-  href: undefined,
-  className: undefined,
-  buttonProps: undefined,
-  loading: undefined,
 };
 
 export default Button;

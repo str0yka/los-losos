@@ -17,24 +17,26 @@ export interface ProgressProps {
 
 interface ProgressLineProps {
   progress: { path: string; name: string }[];
+  className?: string
 }
 
-const ProgressLine: React.FC<ProgressLineProps> = ({ progress }) => {
+const ProgressLine: React.FC<ProgressLineProps> = ({ progress, className }) => {
   const progressItems = useProgressLine(progress);
-  const progressLineClassName = (currentOrPrevious: boolean) => classes({
-    [s.progressLine]: true,
+  const progressLineClassName = classes(s.header, className);
+  const lineClassName = (currentOrPrevious: boolean) => classes({
+    [s.line]: true,
     [s.previous]: currentOrPrevious,
   });
 
   if (!progressItems) return <ProgressLineSkeleton length={progress.length} />;
 
   return (
-    <div className={s.header}>
+    <div className={progressLineClassName}>
       {progressItems?.map((progressItem, index) => (
         <React.Fragment key={progressItem.path}>
           {!!index && (
             <div
-              className={progressLineClassName(progressItem.currentOrPrevious)}
+              className={lineClassName(progressItem.currentOrPrevious)}
             />
           )}
           <ProgressLineButton progress={progressItem} />

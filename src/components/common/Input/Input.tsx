@@ -26,6 +26,4 @@ const Input: React.FC<InputProps> = ({
   </label>
 );
 
-Input.defaultProps = { variant: 'default', otherProps: undefined };
-
 export default Input;

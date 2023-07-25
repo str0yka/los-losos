@@ -13,6 +13,4 @@ const Skeleton: React.FC<SkeletonProps> = ({ className }) => {
   return <div className={skeletonClassName} />;
 };
 
-Skeleton.defaultProps = { className: undefined };
-
 export default Skeleton;

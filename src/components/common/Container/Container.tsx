@@ -8,7 +8,7 @@ interface ContainerProps {
   width?: 'narrow' | 'medium' | 'wide';
 }
 
-const Container: React.FC<ContainerProps> = ({ children, width }) => {
+const Container: React.FC<ContainerProps> = ({ children, width = 'wide' }) => {
   const classes = classNames(s.container, {
     [s.narrow]: width === 'narrow',
     [s.medium]: width === 'medium',
@@ -17,7 +17,5 @@ const Container: React.FC<ContainerProps> = ({ children, width }) => {
 
   return <div className={classes}>{children}</div>;
 };
-
-Container.defaultProps = { width: 'wide' };
 
 export default Container;

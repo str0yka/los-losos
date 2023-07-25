@@ -27,7 +27,7 @@
 
   svg {
     position: absolute;
-    right: calc(50% - 60px);
+    right: calc(50% - 100px);
     top: 50%;
     transform: translateY(-50%);
 
@@ -40,7 +40,7 @@
 
   &:hover {
     svg {
-      right: calc(50% - 65px);
+      right: calc(50% - 105px);
     }
   }
 }

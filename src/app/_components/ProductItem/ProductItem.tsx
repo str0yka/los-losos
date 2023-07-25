@@ -16,7 +16,7 @@ interface ProductItemProps {
 const ProductItem: React.FC<ProductItemProps> = ({
   product,
   size,
-  removeButton,
+  removeButton = false,
 }) => {
   const productClassName = classNames({
     [s.product]: true,
@@ -49,7 +49,5 @@ const ProductItem: React.FC<ProductItemProps> = ({
     </article>
   );
 };
-
-ProductItem.defaultProps = { removeButton: false };
 
 export default ProductItem;
