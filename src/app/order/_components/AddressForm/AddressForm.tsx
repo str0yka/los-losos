@@ -18,6 +18,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ handleInputChange }) => (
           placeholder="Обязательно заполните"
           name="street"
           onChange={handleInputChange}
+          required
         />
       </li>
       <li>
@@ -26,6 +27,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ handleInputChange }) => (
           placeholder="И это тоже"
           name="home"
           onChange={handleInputChange}
+          required
         />
       </li>
       <li>

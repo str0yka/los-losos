@@ -44,9 +44,11 @@ const OrderForm = () => {
           <li className={s.formItem}>
             <span>Телефон &#9742;</span>
             <Input
+              type="tel"
               name="phone"
               onChange={handleInputChange}
               placeholder="Ваш номер телефона?"
+              required
             />
           </li>
           <li className={s.formItem}>

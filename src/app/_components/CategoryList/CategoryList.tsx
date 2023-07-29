@@ -9,7 +9,7 @@ interface CategoryListProps {
 }
 
 const CategoryList: React.FC<CategoryListProps> = ({ category }) => (
-  <section className={styles.category}>
+  <section className={styles.category} id={category.title}>
     <h2 className={styles.title}>{category.title}</h2>
     <div className={styles.list}>
       {category.products.map((product: Product) => (

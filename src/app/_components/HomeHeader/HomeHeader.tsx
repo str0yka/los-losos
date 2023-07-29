@@ -46,7 +46,14 @@ const MainPageHeader: React.FC<MainPageHeaderProps> = ({ categories }) => {
           </Link>
           <ul ref={list} className={s.categoryList}>
             {categories.map((category) => (
-              <li key={category.title} className={s.categoryItem}>
+              <li
+                key={category.title}
+                className={s.categoryItem}
+                onClick={() => window.scrollTo({
+                  top: document.getElementById(category.title)?.offsetTop,
+                  behavior: 'smooth',
+                })}
+              >
                 {category.title}
               </li>
             ))}

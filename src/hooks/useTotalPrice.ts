@@ -31,9 +31,9 @@ export const useTotalPrice = () => {
 
   return {
     totalPrice: Math.floor(totalPrice),
-    totalPriceWithDiscount: Math.floor(totalPriceWithDiscount),
-    promocodeDiscount: Math.floor(promocodeDiscount),
-    totalPriceWithDelivery,
+    totalPriceWithDiscount: Math.round(totalPriceWithDiscount),
+    promocodeDiscount: Math.round(promocodeDiscount),
+    totalPriceWithDelivery: Math.round(totalPriceWithDelivery),
     priceToFreeDelivery,
     isDeliveryFree,
   };

@@ -32,6 +32,13 @@ interface RootLayoutInterface {
 // 23. В компоненте CountButton разобраться с классами
 // 24. В ProgressLine не должно быть max-width
 // 25. Связать CountButton с состояние loading/all
+// 26. У промокод должно быть больше опций (когда истекает + мин. сумма применения и тд)
+// + они должны привязваться к корзине
+// 27. Создать сущность orders и привязать её к пользователю
+// 28. У order должно быть состояние (заказ принят, готовится, в пути, доставлен)
+// 29. lazy load для category
+// 30. intersection observer для category
+// 31. слайдер по макету
 
 const RootLayout: React.FC<RootLayoutInterface> = ({ children }) => (
   <html lang="ru" className={MuseoSans.className}>
