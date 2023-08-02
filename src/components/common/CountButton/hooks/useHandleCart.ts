@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { useAccessToken } from '@/hooks/useAccessToken';
+import { useAppDispatch } from '@/hooks/useAppDispatch';
 import { fetchAddToCart, fetchDeleteFromCart } from '@/store/slices/cartSlices';
-import { AppDispatch, RootState } from '@/store/store';
+import { RootState } from '@/store/store';
 
 export const useHandleCart = (id: number) => {
   const [isLoading, setIsLoading] = useState(false);
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const count: number = useSelector((state: RootState) => {
     const candidate = state.cart.data.find(({ product }) => product?.id === id);
     if (!candidate) return 0;

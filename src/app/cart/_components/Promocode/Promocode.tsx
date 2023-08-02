@@ -1,17 +1,18 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Button from '@/components/common/Button/Button';
 import Input from '@/components/common/Input/Input';
+import { useAppDispatch } from '@/hooks/useAppDispatch';
 import { fetchCheckPromocode } from '@/store/slices/promocodeSlice';
-import { AppDispatch, RootState } from '@/store/store';
+import { RootState } from '@/store/store';
 
 import s from './Promocode.module.scss';
 
 const Promocode = () => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const { promocode, status } = useSelector(
     (state: RootState) => state.promocode,
   );

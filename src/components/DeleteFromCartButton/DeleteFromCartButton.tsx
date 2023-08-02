@@ -1,11 +1,10 @@
 'use client';
 
 import React from 'react';
-import { useDispatch } from 'react-redux';
 
 import { useAccessToken } from '@/hooks/useAccessToken';
+import { useAppDispatch } from '@/hooks/useAppDispatch';
 import { fetchDeleteAllFromCart, fetchDeleteOneFromCart } from '@/store/slices/cartSlices';
-import { AppDispatch } from '@/store/store';
 import { getClassNames } from '@/utils';
 
 import s from './DeleteFromCartButton.module.scss';
@@ -19,7 +18,7 @@ const DeleteFromCartButton: React.FC<DeleteFromCartButtonProps> = ({
   id,
   className,
 }) => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const accessToken = useAccessToken();
 
   const onDeleteFromCart = () => {

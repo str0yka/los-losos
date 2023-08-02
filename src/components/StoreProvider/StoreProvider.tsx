@@ -2,11 +2,12 @@
 
 import { useSession } from 'next-auth/react';
 import React, { useEffect } from 'react';
-import { Provider, useDispatch } from 'react-redux';
+import { Provider } from 'react-redux';
 
 import { useAccessToken } from '@/hooks/useAccessToken';
+import { useAppDispatch } from '@/hooks/useAppDispatch';
 import { fetchAllProductsInCart } from '@/store/slices/cartSlices';
-import store, { AppDispatch } from '@/store/store';
+import store from '@/store/store';
 
 interface StoreProviderProps {
   children: React.ReactNode;
@@ -14,7 +15,7 @@ interface StoreProviderProps {
 
 const DispatchProvider: React.FC<StoreProviderProps> = ({ children }) => {
   const { status } = useSession();
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useAppDispatch();
   const accessToken = useAccessToken();
 
   useEffect(() => {
