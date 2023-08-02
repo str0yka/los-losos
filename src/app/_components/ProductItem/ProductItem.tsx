@@ -17,17 +17,12 @@ const ProductItem: React.FC<ProductItemProps> = ({
   size,
   removeButton = false,
 }) => {
-  const productClassName = getClassNames({
-    [s.product]: true,
-    [s.small]: size === 'small',
-    [s.medium]: size === 'medium',
-    [s.large]: size === 'large',
-  });
+  const productClassName = getClassNames(s.product, s[size]);
 
   return (
     <article className={productClassName}>
       <div className={s.image}>
-        <img src={`${API_URL}/../${product.img}`} alt="" />
+        <img src={`${API_URL}/../${product.img}`} alt={product.title} />
       </div>
       <div className={s.nonImage}>
         <div className={s.info}>
@@ -35,7 +30,9 @@ const ProductItem: React.FC<ProductItemProps> = ({
             {product.title}
             <span>{product.weight} г</span>
           </h3>
-          <p className={s.foods}>{product.foods}</p>
+          <p className={s.foods}>
+            {product.foods}
+          </p>
         </div>
         <div className={s.priceBlock}>
           <span className={s.price}>{product.price} Р</span>

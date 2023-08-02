@@ -1,14 +1,19 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { ComponentProps } from 'react';
+
+import { getClassNames } from '@/utils';
 
 import s from './ArrowButton.module.scss';
 
-interface ArrowButtonProps {
+interface ArrowButtonProps extends ComponentProps<'button'> {
   direction: 'left' | 'right';
   href?: string;
+  className?: string
 }
 
-const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, href }) => {
+const ArrowButton: React.FC<ArrowButtonProps> = ({
+ direction, href, className, ...buttonProps
+}) => {
   const arrow = (
     <svg
       className={direction === 'right' ? s.rightDirection : undefined}
@@ -26,20 +31,22 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ direction, href }) => {
   );
 
   return href ? (
-    <Link href={href}>
-      <button className={s.button} type="button">
+    <Link href={href} className={className}>
+      <button
+        {...buttonProps}
+        className={s.button}
+      >
         {arrow}
-        <span className="visually-hidden">назад</span>
       </button>
     </Link>
   ) : (
-    <button className={s.button} type="button">
+    <button
+      {...buttonProps}
+      className={getClassNames(s.button, className)}
+    >
       {arrow}
-      <span className="visually-hidden">назад</span>
     </button>
   );
 };
-
-ArrowButton.defaultProps = { href: undefined };
 
 export default ArrowButton;

@@ -2,11 +2,17 @@
 @import "visually-hidden";
 
 body {
-  --primaryColor: #fada5e;
+  --primaryColor: #FADA5E;
+  --primaryColorLight: #FFF278;
   --primaryColorHover: #fad646;
+  --primaryColorGradient: linear-gradient(
+                  225deg,
+                  #FADA5E 0%,
+                  #C8A726 100%
+  );
   --neutralColor: #ffffff;
   --neutralColorTransparent: rgba(255, 255, 255, 0.05);
-  --neutralColorDarken: #cccccc;
+  --neutralColorDarken: #CCCCCC;
   --secondaryColorLight: #373737;
   --secondaryColorLighten: #111111;
   --secondaryColorTransparent: #0e0e0e99;

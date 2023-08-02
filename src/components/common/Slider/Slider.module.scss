@@ -1,6 +1,41 @@
-.slider {
-  height: 400px;
+.sliderContainer {
+  position: relative;
+}
 
-  background: linear-gradient(225deg, #FADA5E 0%, #C8A726 100%);
-  border-radius: 20px;
+.arrowButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.rightButton {
+  right: -20px;
+}
+
+.leftButton {
+  left: -20px;
+}
+
+.slider {
+  width: 100%;
+
+  display: flex;
+  flex: none;
+  flex-flow: row nowrap;
+
+  overflow: auto;
+
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.sliderItem {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+
+  width: 100%;
 }

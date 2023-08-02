@@ -36,6 +36,7 @@
 }
 
 .disabled {
+  background-color: var(--secondaryColor);
   border: var(--secondaryColorLight) 1px solid;
   color: var(--neutralColor);
   transition: all 0.2s ease;

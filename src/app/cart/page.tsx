@@ -12,9 +12,11 @@ import { RootState } from '@/store/store';
 import Promocode from './_components/Promocode/Promocode';
 import s from './page.module.scss';
 
+const getCart = (state: RootState) => state.cart;
+
 const Cart = () => {
   const { totalPriceWithDiscount, isDeliveryFree, priceToFreeDelivery } = useTotalPrice();
-  const { status, data } = useSelector((state: RootState) => state.cart);
+  const { status, data } = useSelector(getCart);
 
   if (!data.length && status !== 'loading/all') return <EmptyCart />;
 

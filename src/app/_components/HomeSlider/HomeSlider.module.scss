@@ -1,0 +1,41 @@
+.item {
+  height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+  background: var(--primaryColorGradient);
+
+  font-size: 36px;
+  color: var(--neutralColor);
+
+  span {
+    color: var(--primaryColorLight);
+  }
+}
+
+@media (min-width: 768px) {
+  .item {
+    height: 250px;
+
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 960px) {
+  .item {
+    height: 350px;
+
+    font-size: 96px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .item {
+    height: 400px;
+
+    font-size: 128px;
+  }
+}

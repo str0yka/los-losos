@@ -3,8 +3,8 @@ import React from 'react';
 
 import CategoryList from '@/app/_components/CategoryList/CategoryList';
 import HomeHeader from '@/app/_components/HomeHeader/HomeHeader';
+import HomeSlider from '@/app/_components/HomeSlider/HomeSlider';
 import Container from '@/components/common/Container/Container';
-import Slider from '@/components/common/Slider/Slider';
 import { API_URL } from '@/utils/consts';
 
 export const metadata: Metadata = {
@@ -31,7 +31,7 @@ const Home = async () => {
     <>
       <HomeHeader categories={categories} />
       <Container>
-        <Slider />
+        <HomeSlider />
         {categories.map((category) => (
           <CategoryList key={category.title} category={category} />
         ))}

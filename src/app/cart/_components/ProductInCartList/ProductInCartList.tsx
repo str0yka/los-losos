@@ -9,8 +9,10 @@ import { RootState } from '@/store/store';
 
 import s from './ProductInCartList.module.scss';
 
+const getCart = (state: RootState) => state.cart;
+
 const ProductInCartList = () => {
-  const { status, data } = useSelector((state: RootState) => state.cart);
+  const { status, data } = useSelector(getCart);
 
   return (
     <section className={s.list}>

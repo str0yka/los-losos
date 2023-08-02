@@ -33,10 +33,9 @@ interface RootLayoutInterface {
 // 28. У order должно быть состояние (заказ принят, готовится, в пути, доставлен)
 // 29. lazy load для category
 // 30. intersection observer для category
+// 33. Reselect
 
-// 23. В компоненте CountButton разобраться с классами
 // 20. Сделать хук useAppDispatch
-// 31. слайдер по макету
 // 32. Переписать UI-компоненты на s[variant], s[size] вместо s.outlined: variant === 'outlined"
 
 const RootLayout: React.FC<RootLayoutInterface> = ({ children }) => (
@@ -45,7 +44,7 @@ const RootLayout: React.FC<RootLayoutInterface> = ({ children }) => (
       <AuthProvider>
         <StoreProvider>
           <Header />
-          <div className="main">{children}</div>
+          <main className="main">{children}</main>
         </StoreProvider>
       </AuthProvider>
     </body>
