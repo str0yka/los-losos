@@ -21,16 +21,11 @@ interface RootLayoutInterface {
 // 4. Кастомная страница авторизации
 // 5. Для изображений использовать <Image></Image>
 // 6. В папке store или slices сделать папку actions
+// 7. Папку slices переименовать в reducers
 // 11. Сделать кастомные запросы fetch
-// 15. Нужны правила на z-index
-// 16. ? Для текста сделать компонент Typography
+// 15. Нужны правила на z-index (css variables)
 // 17. Сделать UI-kit (input, button, arrowbutton || button with svg, icon)
 // 19. Вместо <span class="visually-hidden"></... сделать отдельный компонент
-// 20. Сделать хук useAppDispatch
-// 22. В компоненте Button вместо variant="outlined-secondary" сделать
-// variant="disabled" или просто добавить свойсто disabled
-// 23. В компоненте CountButton разобраться с классами
-// 24. В ProgressLine не должно быть max-width
 // 25. Связать CountButton с состояние loading/all
 // 26. У промокод должно быть больше опций (когда истекает + мин. сумма применения и тд)
 // + они должны привязваться к корзине
@@ -38,7 +33,11 @@ interface RootLayoutInterface {
 // 28. У order должно быть состояние (заказ принят, готовится, в пути, доставлен)
 // 29. lazy load для category
 // 30. intersection observer для category
+
+// 23. В компоненте CountButton разобраться с классами
+// 20. Сделать хук useAppDispatch
 // 31. слайдер по макету
+// 32. Переписать UI-компоненты на s[variant], s[size] вместо s.outlined: variant === 'outlined"
 
 const RootLayout: React.FC<RootLayoutInterface> = ({ children }) => (
   <html lang="ru" className={MuseoSans.className}>

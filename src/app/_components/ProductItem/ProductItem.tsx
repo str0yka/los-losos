@@ -1,9 +1,8 @@
-import classNames from 'classnames';
 import React from 'react';
 
 import CountButton from '@/components/common/CountButton/CountButton';
 import DeleteFromCartButton from '@/components/DeleteFromCartButton/DeleteFromCartButton';
-import { API_URL } from '@/utils';
+import { API_URL, getClassNames } from '@/utils';
 
 import s from './ProductItem.module.scss';
 
@@ -18,7 +17,7 @@ const ProductItem: React.FC<ProductItemProps> = ({
   size,
   removeButton = false,
 }) => {
-  const productClassName = classNames({
+  const productClassName = getClassNames({
     [s.product]: true,
     [s.small]: size === 'small',
     [s.medium]: size === 'medium',

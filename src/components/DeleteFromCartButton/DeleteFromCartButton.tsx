@@ -1,12 +1,12 @@
 'use client';
 
-import classes from 'classnames';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { useAccessToken } from '@/hooks/useAccessToken';
 import { fetchDeleteAllFromCart, fetchDeleteOneFromCart } from '@/store/slices/cartSlices';
 import { AppDispatch } from '@/store/store';
+import { getClassNames } from '@/utils';
 
 import s from './DeleteFromCartButton.module.scss';
 
@@ -34,7 +34,7 @@ const DeleteFromCartButton: React.FC<DeleteFromCartButtonProps> = ({
     }
   };
 
-  const buttonClassName = classes(s.button, className);
+  const buttonClassName = getClassNames(s.button, className);
 
   return (
     <button className={buttonClassName} onClick={onDeleteFromCart} type="button">

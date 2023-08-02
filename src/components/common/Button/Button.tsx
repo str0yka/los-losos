@@ -1,8 +1,8 @@
-import classNames from 'classnames';
 import Link from 'next/link';
 import React, { ComponentProps } from 'react';
 
 import Skeleton from '@/components/common/Skeleton/Skeleton';
+import { getClassNames } from '@/utils';
 
 import s from './Button.module.scss';
 
@@ -40,16 +40,8 @@ const Button: React.FC<ButtonProps> = ({
   children,
   ...buttonProps
 }) => {
-  const classes = classNames(s.button, className, {
-    [s.contained]: variant === 'contained',
-    [s.outlined]: variant === 'outlined',
+  const classes = getClassNames(s.button, className, s[variant], s[textVariant], s[size], {
     [s.disabled]: disabled,
-    [s.uppercase]: textVariant === 'uppercase',
-    [s.lowercase]: textVariant === 'lowercase',
-    [s.capitalize]: textVariant === 'capitalize',
-    [s.small]: size === 'small',
-    [s.medium]: size === 'medium',
-    [s.large]: size === 'large',
     [s.rounded]: rounded,
     [s.square]: !rounded,
     [s.hover]: hover,

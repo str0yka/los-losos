@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb1147d6-97be-445b-bdbd-7e90d4b13025" name="Changes" comment="" />
+    <list default="true" id="cb1147d6-97be-445b-bdbd-7e90d4b13025" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +43,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Nikita\\AppData\\Roaming\\npm\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "Settings.JavaScript",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "D:\\my-projects\\5-next-projects\\7-los-losos\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -66,7 +70,8 @@
       <workItem from="1690275129883" duration="15110000" />
       <workItem from="1690291169078" duration="12963000" />
       <workItem from="1690360614412" duration="43000" />
-      <workItem from="1690640035481" duration="3569000" />
+      <workItem from="1690640035481" duration="7038000" />
+      <workItem from="1690743879536" duration="8911000" />
     </task>
     <servers />
   </component>

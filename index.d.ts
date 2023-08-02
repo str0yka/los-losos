@@ -40,23 +40,3 @@ type Promocode = {
   name: string | null;
   text: string | null;
 };
-
-interface InputFormProps {
-  input: {
-    name: string,
-    type:
-      | {
-      text: {
-        min: number,
-        max: number,
-      }
-    } | {
-      file: {
-        accept: 'image',
-      }
-    },
-    startValue?: string,
-    placeholder?: string,
-    required?: boolean
-  }
-}

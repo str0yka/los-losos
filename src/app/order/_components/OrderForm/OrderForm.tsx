@@ -66,7 +66,7 @@ const OrderForm = () => {
               onChange={handleInputChange}
               placeholder="Напишите тут то, что считаете важным"
               maxLength={300}
-              resize="none"
+              resize="noResize"
               className={s.textarea}
             />
           </li>

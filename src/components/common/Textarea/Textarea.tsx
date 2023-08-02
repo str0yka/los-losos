@@ -1,14 +1,15 @@
 'use client';
 
-import classNames from 'classnames';
 import React, { ComponentProps, useState } from 'react';
+
+import { getClassNames } from '@/utils';
 
 import s from './Textarea.module.scss';
 
 interface TextareaProps extends ComponentProps<'textarea'> {
   className?: string
   maxLength?: number
-  resize: 'none' | 'x' | 'y'
+  resize: 'noResize' | 'x' | 'y'
   otherProps?: ComponentProps<'textarea'>
 }
 
@@ -16,13 +17,8 @@ const Textarea: React.FC<TextareaProps> = ({
  className, maxLength, resize, onChange, ...otherProps
 }) => {
   const [value, setValue] = useState<string>('');
-  const labelClassName = classNames(s.label, className);
-  const textareaClassName = classNames({
-    [s.textarea]: true,
-    [s.x]: resize === 'x',
-    [s.y]: resize === 'y',
-    [s.noResize]: resize === 'none',
-  });
+  const labelClassName = getClassNames(s.label, className);
+  const textareaClassName = getClassNames(s.textarea, s[resize]);
 
   return (
     <label className={labelClassName}>

@@ -1,13 +1,12 @@
 'use client';
 
-import classNames from 'classnames';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Skeleton from '@/components/common/Skeleton/Skeleton';
 import { useTotalPrice } from '@/hooks/useTotalPrice';
 import { RootState } from '@/store/store';
-import { DELIVERY_PRICE, PRICE_FOR_FREE_DELIVERY } from '@/utils';
+import { DELIVERY_PRICE, getClassNames, PRICE_FOR_FREE_DELIVERY } from '@/utils';
 
 import s from './Check.module.scss';
 
@@ -22,8 +21,8 @@ const Check: React.FC<CheckProps> = ({ className }) => {
   );
   const { promocodeDiscount, totalPrice, totalPriceWithDelivery } = useTotalPrice();
   const isDeliveryFree = totalPrice > PRICE_FOR_FREE_DELIVERY;
-  const skeletonClassName = classNames(s.skeleton, className);
-  const checkClassName = classNames(s.check, className);
+  const skeletonClassName = getClassNames(s.skeleton, className);
+  const checkClassName = getClassNames(s.check, className);
 
   if (status === 'loading/all') return <Skeleton className={skeletonClassName} />;
 

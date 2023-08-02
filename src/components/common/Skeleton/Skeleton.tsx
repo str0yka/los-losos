@@ -1,5 +1,6 @@
-import classes from 'classnames';
 import React from 'react';
+
+import { getClassNames } from '@/utils';
 
 import s from './Skeleton.module.scss';
 
@@ -8,7 +9,7 @@ interface SkeletonProps {
 }
 
 const Skeleton: React.FC<SkeletonProps> = ({ className }) => {
-  const skeletonClassName = classes(s.skeleton, className);
+  const skeletonClassName = getClassNames(s.skeleton, className);
 
   return <div className={skeletonClassName} />;
 };

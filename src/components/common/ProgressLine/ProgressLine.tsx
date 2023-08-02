@@ -1,10 +1,10 @@
 'use client';
 
-import classes from 'classnames';
 import React from 'react';
 
 import ProgressLineButton from '@/components/common/ProgressLine/ProgressLineItem/ProgressLineItem';
 import ProgressLineSkeleton from '@/components/common/ProgressLine/ProgressLineSkeleton/ProgressLineSkeleton';
+import { getClassNames } from '@/utils';
 
 import { useProgressLine } from './hooks';
 import s from './ProgressLine.module.scss';
@@ -22,8 +22,8 @@ interface ProgressLineProps {
 
 const ProgressLine: React.FC<ProgressLineProps> = ({ progress, className }) => {
   const progressItems = useProgressLine(progress);
-  const progressLineClassName = classes(s.header, className);
-  const lineClassName = (currentOrPrevious: boolean) => classes({
+  const progressLineClassName = getClassNames(s.header, className);
+  const lineClassName = (currentOrPrevious: boolean) => getClassNames({
     [s.line]: true,
     [s.previous]: currentOrPrevious,
   });
