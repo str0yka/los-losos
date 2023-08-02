@@ -2,7 +2,9 @@
 
 import * as React from 'react';
 
-import classes from './CountButton.module.scss';
+import { getClassNames } from '@/utils';
+
+import s from './CountButton.module.scss';
 import { useHandleCart } from './hooks';
 
 interface CountButtonProps {
@@ -19,16 +21,17 @@ const CountButton: React.FC<CountButtonProps> = ({ id }) => {
 
   return (
     <div
-      className={`${classes.CountButton} 
-      ${count > 0 ? classes.Active : ''} 
-      ${isLoading && classes.disabled}`}
+      className={getClassNames({
+        [s.countButton]: true,
+        [s.active]: count > 0,
+        [s.disabled]: isLoading,
+      })}
       onClick={() => count <= 0 && addToCart()}
       onKeyDown={(event) => event.key === 'Enter' && count <= 0 && addToCart()}
       role="button"
       tabIndex={0}
     >
       <div
-        className="count countMinus"
         onClick={deleteFromCart}
         onKeyDown={(event) => event.key === 'Enter' && deleteFromCart()}
         role="button"
@@ -37,7 +40,6 @@ const CountButton: React.FC<CountButtonProps> = ({ id }) => {
         <span className="visually-hidden">добавить в корзину</span>
       </div>
       <div
-        className="count countValue"
         onClick={(event) => event.stopPropagation()}
         onKeyDown={(event) => event.stopPropagation()}
         role="button"
@@ -46,7 +48,6 @@ const CountButton: React.FC<CountButtonProps> = ({ id }) => {
         {count}
       </div>
       <div
-        className="count countPlus"
         onClick={addToCart}
         onKeyDown={(event) => event.key === 'Enter' && addToCart()}
         role="button"

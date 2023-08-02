@@ -12,7 +12,7 @@ div.skeletonButton {
   height: 36px;
 }
 
-.CountButton {
+.countButton {
   position: relative;
 
   width: 36px;
@@ -61,7 +61,7 @@ div.skeletonButton {
     }
   }
 
-  &.Active {
+  &.active {
     display: flex;
     width: 108px;
     border: none;
@@ -148,6 +148,8 @@ div.skeletonButton {
   &.disabled {
     pointer-events: none;
     animation: disabled 1s ease infinite;
+
+    background-color: var(--neutralColorDarken);
 
     div {
       background-color: var(--neutralColorDarken);
