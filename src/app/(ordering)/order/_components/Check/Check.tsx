@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import Skeleton from '@/components/common/Skeleton/Skeleton';
 import { useTotalPrice } from '@/hooks/useTotalPrice';
-import { RootState } from '@/store/store';
+import { RootState } from '@/store';
 import { DELIVERY_PRICE, getClassNames, PRICE_FOR_FREE_DELIVERY } from '@/utils';
 
 import s from './Check.module.scss';

@@ -1,7 +1,7 @@
 import type { NextAuthOptions } from 'next-auth';
 import CredentialProvider from 'next-auth/providers/credentials';
 
-import AppFetch from '@/http';
+import UserApi from '@/http/UserApi';
 
 export const options: NextAuthOptions = {
   providers: [
@@ -27,7 +27,7 @@ export const options: NextAuthOptions = {
           code: credentials?.code,
         };
 
-        const user = await AppFetch.post('/user/login', { body });
+        const user = await UserApi.login(body);
 
         if (user.id) {
           return user;

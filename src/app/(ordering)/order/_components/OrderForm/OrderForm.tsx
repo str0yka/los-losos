@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import AddressForm from '@/app/order/_components/AddressForm/AddressForm';
+import AddressForm from '@/app/(ordering)/order/_components/AddressForm/AddressForm';
 import Button from '@/components/common/Button/Button';
 import Input from '@/components/common/Input/Input';
 import Textarea from '@/components/common/Textarea/Textarea';

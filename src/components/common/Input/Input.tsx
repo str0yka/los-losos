@@ -1,5 +1,7 @@
 import React, { ComponentProps } from 'react';
 
+import VisuallyHidden from '@/components/common/VisuallyHidden/VisuallyHidden';
+
 import s from './Input.module.scss';
 
 interface InputProps extends ComponentProps<'input'> {
@@ -18,11 +20,10 @@ const Input: React.FC<InputProps> = ({
         <input {...otherProps} className={s.input} />
       </>
     ) : (
-      <>
-        <span className="visually-hidden">Поле для ввода</span>
-        <input {...otherProps} className={s.input} />
-      </>
+      <input {...otherProps} className={s.input} />
+
     )}
+    <VisuallyHidden>Поле для ввода</VisuallyHidden>
   </label>
 );
 

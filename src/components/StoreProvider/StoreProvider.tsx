@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 
 import { useAccessToken } from '@/hooks/useAccessToken';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
-import { fetchAllProductsInCart } from '@/store/slices/cartSlices';
-import store from '@/store/store';
+import store from '@/store';
+import { fetchAllProductsInCart } from '@/store/reducers/cartReducer';
 
 interface StoreProviderProps {
   children: React.ReactNode;

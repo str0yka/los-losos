@@ -1,8 +1,6 @@
 import { Metadata } from 'next';
 import React from 'react';
 
-import AppProgressLine from '@/components/AppProgressLine/AppProgressLine';
-import Container from '@/components/common/Container/Container';
 import DeleteFromCartButton from '@/components/DeleteFromCartButton/DeleteFromCartButton';
 import TitleBlock from '@/components/TitleBlock/TitleBlock';
 
@@ -15,15 +13,14 @@ interface CartLayoutProps {
 }
 
 const CartLayout: React.FC<CartLayoutProps> = ({ children }) => (
-  <Container width="narrow">
-    <AppProgressLine />
+  <>
     <TitleBlock
       title="Корзина"
       backTo="/"
       rightSide={<DeleteFromCartButton />}
     />
     {children}
-  </Container>
+  </>
 );
 
 export default CartLayout;

@@ -2,9 +2,9 @@ import React from 'react';
 
 import ProgressLine from '@/components/common/ProgressLine/ProgressLine';
 
-import s from './AppProgressLine.module.scss';
+import s from './OrderingProgressLine.module.scss';
 
-const AppProgressLine = () => {
+const OrderingProgressLine = () => {
   const progress = [
     { path: '/cart', name: 'Корзина' },
     { path: '/order', name: 'Оформление заказа' },
@@ -14,4 +14,4 @@ const AppProgressLine = () => {
   return <ProgressLine progress={progress} className={s.progressLine} />;
 };
 
-export default AppProgressLine;
+export default OrderingProgressLine;

@@ -20,12 +20,7 @@ interface RootLayoutInterface {
 // TODO:
 // 4. Кастомная страница авторизации
 // 5. Для изображений использовать <Image></Image>
-// 6. В папке store или slices сделать папку actions
-// 7. Папку slices переименовать в reducers
-// 11. Сделать кастомные запросы fetch
-// 15. Нужны правила на z-index (css variables)
 // 17. Сделать UI-kit (input, button, arrowbutton || button with svg, icon)
-// 19. Вместо <span class="visually-hidden"></... сделать отдельный компонент
 // 25. Связать CountButton с состояние loading/all
 // 26. У промокод должно быть больше опций (когда истекает + мин. сумма применения и тд)
 // + они должны привязваться к корзине
@@ -34,10 +29,10 @@ interface RootLayoutInterface {
 // 29. lazy load для category
 // 30. intersection observer для category
 // 33. Reselect
+// 34. (group) route для order cart confirm
+// 35. Структура компонентов
 
-// 20. Сделать хук useAppDispatch
-// 32. Переписать UI-компоненты на s[variant], s[size] вместо s.outlined: variant === 'outlined"
-
+// 11. Сделать кастомные запросы fetch
 const RootLayout: React.FC<RootLayoutInterface> = ({ children }) => (
   <html lang="ru" className={MuseoSans.className}>
     <body>

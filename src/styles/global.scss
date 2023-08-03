@@ -1,23 +1,29 @@
 @import "zero";
-@import "visually-hidden";
+
+:root {
+  --defaultIndex: 1;
+  --upperIndex: 10;
+  --highIndex: 100;
+  --highestIndex: 1000;
+}
 
 body {
   --primaryColor: #FADA5E;
   --primaryColorLight: #FFF278;
-  --primaryColorHover: #fad646;
+  --primaryColorHover: #FAD646;
   --primaryColorGradient: linear-gradient(
                   225deg,
                   #FADA5E 0%,
                   #C8A726 100%
   );
-  --neutralColor: #ffffff;
+  --neutralColor: #FFFFFF;
   --neutralColorTransparent: rgba(255, 255, 255, 0.05);
   --neutralColorDarken: #CCCCCC;
   --secondaryColorLight: #373737;
-  --secondaryColorLighten: #111111;
-  --secondaryColorTransparent: #0e0e0e99;
+  --secondaryColorLighten: #171717;
+  --secondaryColorTransparent: #0E0E0E99;
   --secondaryColorSkeleton: rgba(14, 14, 14, 0.35);
-  --secondaryColor: #0e0e0e;
+  --secondaryColor: #0E0E0E;
 
   display: flex;
   flex-direction: column;

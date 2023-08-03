@@ -6,16 +6,14 @@ import { useSelector } from 'react-redux';
 import Button from '@/components/common/Button/Button';
 import Input from '@/components/common/Input/Input';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
-import { fetchCheckPromocode } from '@/store/slices/promocodeSlice';
-import { RootState } from '@/store/store';
+import { fetchCheckPromocode } from '@/store/reducers/promocodeReducer';
+import { getPromocode } from '@/store/selectors/promocodeSelectors';
 
 import s from './Promocode.module.scss';
 
 const Promocode = () => {
   const dispatch = useAppDispatch();
-  const { promocode, status } = useSelector(
-    (state: RootState) => state.promocode,
-  );
+  const { promocode, status } = useSelector(getPromocode);
   const [code, setCode] = useState(promocode?.code || '');
 
   const onConfirmPromocode = async () => {

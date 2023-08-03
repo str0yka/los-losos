@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 
+import VisuallyHidden from '@/components/common/VisuallyHidden/VisuallyHidden';
 import { getClassNames } from '@/utils';
 
 import s from './CountButton.module.scss';
@@ -37,7 +38,7 @@ const CountButton: React.FC<CountButtonProps> = ({ id }) => {
         role="button"
         tabIndex={0}
       >
-        <span className="visually-hidden">добавить в корзину</span>
+        <VisuallyHidden>добавить в корзину</VisuallyHidden>
       </div>
       <div
         onClick={(event) => event.stopPropagation()}
@@ -53,7 +54,7 @@ const CountButton: React.FC<CountButtonProps> = ({ id }) => {
         role="button"
         tabIndex={0}
       >
-        <span className="visually-hidden">добавить в корзину</span>
+        <VisuallyHidden>добавить в корзину</VisuallyHidden>
       </div>
     </div>
   );

@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { useAccessToken } from '@/hooks/useAccessToken';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
-import { fetchAddToCart, fetchDeleteFromCart } from '@/store/slices/cartSlices';
-import { RootState } from '@/store/store';
+import { RootState } from '@/store';
+import { fetchAddToCart, fetchDeleteFromCart } from '@/store/reducers/cartReducer';
 
 export const useHandleCart = (id: number) => {
   const [isLoading, setIsLoading] = useState(false);

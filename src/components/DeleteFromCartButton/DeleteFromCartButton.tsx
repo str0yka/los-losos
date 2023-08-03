@@ -2,9 +2,10 @@
 
 import React from 'react';
 
+import VisuallyHidden from '@/components/common/VisuallyHidden/VisuallyHidden';
 import { useAccessToken } from '@/hooks/useAccessToken';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
-import { fetchDeleteAllFromCart, fetchDeleteOneFromCart } from '@/store/slices/cartSlices';
+import { fetchDeleteAllFromCart, fetchDeleteItemFromCart } from '@/store/reducers/cartReducer';
 import { getClassNames } from '@/utils';
 
 import s from './DeleteFromCartButton.module.scss';
@@ -23,7 +24,7 @@ const DeleteFromCartButton: React.FC<DeleteFromCartButtonProps> = ({
 
   const onDeleteFromCart = () => {
     if (id) {
-      dispatch(fetchDeleteOneFromCart({ accessToken, id }));
+      dispatch(fetchDeleteItemFromCart({ accessToken, id }));
     } else {
       const wantDelete = confirm(
         'Вы действительно хотите удалить все товары из корзины?', // TODO: кастомный confirm
@@ -56,7 +57,7 @@ const DeleteFromCartButton: React.FC<DeleteFromCartButtonProps> = ({
           </clipPath>
         </defs>
       </svg>
-      <span className="visually-hidden">Удалить все товары из корзины</span>
+      <VisuallyHidden>Удалить {id ? 'все товары' : 'товар'} из корзины</VisuallyHidden>
     </button>
   );
 };

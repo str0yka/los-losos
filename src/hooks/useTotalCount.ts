@@ -1,11 +1,5 @@
 import { useSelector } from 'react-redux';
 
-import { RootState } from '@/store/store';
+import { getTotalCount } from '@/store/selectors/cartSelectors';
 
-export const useTotalCount = () => {
-  const totalCount = useSelector(
-    (state: RootState) => state.cart.data.reduce((accum, { count }) => accum + count, 0),
-  );
-
-  return totalCount;
-};
+export const useTotalCount = () => useSelector(getTotalCount);

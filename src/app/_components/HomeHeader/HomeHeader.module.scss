@@ -5,7 +5,7 @@
   background-color: var(--secondaryColorTransparent);
   backdrop-filter: blur(20px);
 
-  z-index: 10;
+  z-index: var(--upperIndex);
 
   .header {
     display: flex;

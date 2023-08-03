@@ -62,7 +62,7 @@ const AddressForm: React.FC<AddressFormProps> = ({ handleInputChange }) => (
         <span>Комментарий к адресу</span>
         <Textarea
           className={s.textarea}
-          resize="none"
+          resize="noResize"
           placeholder="Укажите код домофона или другую, важную для курьера, информацию"
           name="addressComment"
           onChange={handleInputChange}

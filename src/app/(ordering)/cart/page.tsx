@@ -3,16 +3,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import EmptyCart from '@/app/cart/_components/EmptyCart/EmptyCart';
-import ProductInCartList from '@/app/cart/_components/ProductInCartList/ProductInCartList';
+import EmptyCart from '@/app/(ordering)/cart/_components/EmptyCart/EmptyCart';
+import ProductInCartList from '@/app/(ordering)/cart/_components/ProductInCartList/ProductInCartList';
 import Button from '@/components/common/Button/Button';
 import { useTotalPrice } from '@/hooks/useTotalPrice';
-import { RootState } from '@/store/store';
+import { getCart } from '@/store/selectors/cartSelectors';
 
 import Promocode from './_components/Promocode/Promocode';
 import s from './page.module.scss';
-
-const getCart = (state: RootState) => state.cart;
 
 const Cart = () => {
   const { totalPriceWithDiscount, isDeliveryFree, priceToFreeDelivery } = useTotalPrice();

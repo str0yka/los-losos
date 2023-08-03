@@ -4,7 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb1147d6-97be-445b-bdbd-7e90d4b13025" name="Changes" comment="" />
+    <list default="true" id="cb1147d6-97be-445b-bdbd-7e90d4b13025" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/(ordering)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/HomeHeader/HomeHeader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/HomeHeader/HomeHeader.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/options.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/options.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart/_components/EmptyCart/EmptyCart.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart/_components/EmptyCart/EmptyCart.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart/_components/ProductInCartList/ProductInCartList.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart/_components/ProductInCartList/ProductInCartList.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart/_components/Promocode/Promocode.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart/_components/Promocode/Promocode.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart/page.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/cart/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/_components/AddressForm/AddressForm.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/_components/AddressForm/AddressForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/_components/Check/Check.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/_components/Check/Check.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/_components/OrderForm/OrderForm.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/_components/OrderForm/OrderForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/page.module.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/order/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DeleteFromCartButton/DeleteFromCartButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DeleteFromCartButton/DeleteFromCartButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StoreProvider/StoreProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StoreProvider/StoreProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/CountButton/CountButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/CountButton/CountButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/CountButton/hooks/useHandleCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/CountButton/hooks/useHandleCart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Input/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Input/Input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Modal/Modal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Modal/Modal.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useAppDispatch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useAppDispatch.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useTotalCount.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useTotalCount.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useTotalPrice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useTotalPrice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/cartSlices.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/slices/promocodeSlice.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/visually-hidden.scss" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,6 +84,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\my-projects\5-next-projects\7-los-losos\src\app\(ordering)\_components" />
+      <recent name="D:\my-projects\5-next-projects\7-los-losos\src\app\(ordering)" />
       <recent name="D:\my-projects\5-next-projects\7-los-losos\src\app\@modal\(.)order" />
       <recent name="D:\my-projects\5-next-projects\7-los-losos\src\app\@modal\(.)order\adress" />
       <recent name="D:\my-projects\5-next-projects\7-los-losos\src\app\@modal\(.)order\modal" />
@@ -68,7 +108,14 @@
       <workItem from="1690360614412" duration="43000" />
       <workItem from="1690640035481" duration="7038000" />
       <workItem from="1690743879536" duration="20549000" />
-      <workItem from="1690978898812" duration="310000" />
+      <workItem from="1690978898812" duration="1158000" />
+      <workItem from="1690991131874" duration="645000" />
+      <workItem from="1691048224537" duration="2197000" />
+      <workItem from="1691056546873" duration="351000" />
+      <workItem from="1691057222992" duration="30000" />
+      <workItem from="1691058474142" duration="339000" />
+      <workItem from="1691059576193" duration="774000" />
+      <workItem from="1691060406688" duration="472000" />
     </task>
     <servers />
   </component>

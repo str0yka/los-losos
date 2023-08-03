@@ -1,13 +1,11 @@
 import { useSelector } from 'react-redux';
 
-import { RootState } from '@/store/store';
+import { RootState } from '@/store';
+import { getTotalPrice } from '@/store/selectors/cartSelectors';
 import { DELIVERY_PRICE, PRICE_FOR_FREE_DELIVERY } from '@/utils';
 
 export const useTotalPrice = () => {
-  const totalPrice = useSelector((state: RootState) => state.cart.data.reduce(
-    (accum, { product: { price }, count }) => (accum + price * count),
-    0,
-  ));
+  const totalPrice = useSelector(getTotalPrice);
 
   const promocodeDiscount = useSelector((state: RootState) => {
     if (!state.promocode.promocode) return 0;

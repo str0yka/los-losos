@@ -1,15 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-import AppFetch from '@/http';
+import CartApi from '@/http/CartApi';
 
 export const fetchAllProductsInCart = createAsyncThunk(
   'cart/fetchAllProductsInCart',
-  async (accessToken: string | undefined) => {
-    const init = accessToken
-      ? { headers: { authorization: accessToken } }
-      : undefined;
-
-    const data = await AppFetch.get('/cart', init);
+  async (accessToken?: string) => {
+    const data = await CartApi.getAll(accessToken);
 
     if ('message' in data) {
       return [];
@@ -22,10 +18,7 @@ export const fetchAllProductsInCart = createAsyncThunk(
 export const fetchAddToCart = createAsyncThunk(
   'cart/fetchAddToCart',
   async ({ id, accessToken }: { id: number; accessToken: string }) => {
-    const data = await AppFetch.post('/cart', {
-      headers: { authorization: accessToken },
-      body: { id },
-    });
+    const data = await CartApi.add(id, accessToken);
 
     if (data.token) {
       localStorage.setItem('CART_TOKEN', data.token);
@@ -38,10 +31,7 @@ export const fetchAddToCart = createAsyncThunk(
 export const fetchDeleteFromCart = createAsyncThunk(
   'cart/fetchDeleteFromCart',
   async ({ id, accessToken }: { id: number; accessToken: string }) => {
-    const data = await AppFetch.delete('/cart', {
-      headers: { authorization: accessToken },
-      body: { id },
-    });
+    const data = await CartApi.delete(id, accessToken);
 
     if (data.token) {
       localStorage.setItem('CART_TOKEN', data.token);
@@ -51,13 +41,10 @@ export const fetchDeleteFromCart = createAsyncThunk(
   },
 );
 
-export const fetchDeleteOneFromCart = createAsyncThunk(
-  'cart/fetchDeleteOneFromCart',
+export const fetchDeleteItemFromCart = createAsyncThunk(
+  'cart/fetchDeleteItemFromCart',
   async ({ id, accessToken }: { id: number; accessToken: string }) => {
-    const { success } = await AppFetch.delete('/cart/one', {
-      headers: { authorization: accessToken },
-      body: { id },
-    });
+    const { success } = await CartApi.deleteItem(id, accessToken);
 
     if (!success) throw new Error('Не удалось удалить товар из корзины');
 
@@ -68,9 +55,7 @@ export const fetchDeleteOneFromCart = createAsyncThunk(
 export const fetchDeleteAllFromCart = createAsyncThunk(
   'cart/fetchDeleteAllFromCart',
   async (accessToken: string) => {
-    const { success } = await AppFetch.delete('/cart/all', {
-      headers: { authorization: accessToken },
-    });
+    const { success } = await CartApi.deleteAllItems(accessToken);
 
     if (!success) throw new Error('Не удалось удалить товары из корзины');
   },
@@ -138,14 +123,14 @@ const cartSlices = createSlice({
       .addCase(fetchDeleteFromCart.rejected, (state) => {
         state.status = 'error';
       })
-      .addCase(fetchDeleteOneFromCart.pending, (state) => {
+      .addCase(fetchDeleteItemFromCart.pending, (state) => {
         state.status = 'loading/one';
       })
-      .addCase(fetchDeleteOneFromCart.fulfilled, (state, { payload }) => {
+      .addCase(fetchDeleteItemFromCart.fulfilled, (state, { payload }) => {
         state.data = state.data.filter(({ product }) => product.id !== payload);
         state.status = 'finished';
       })
-      .addCase(fetchDeleteOneFromCart.rejected, (state) => {
+      .addCase(fetchDeleteItemFromCart.rejected, (state) => {
         state.status = 'error';
       })
       .addCase(fetchDeleteAllFromCart.pending, (state) => {

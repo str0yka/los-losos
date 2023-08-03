@@ -5,11 +5,9 @@ import { useSelector } from 'react-redux';
 
 import ProductItem from '@/app/_components/ProductItem/ProductItem';
 import Skeleton from '@/components/common/Skeleton/Skeleton';
-import { RootState } from '@/store/store';
+import { getCart } from '@/store/selectors/cartSelectors';
 
 import s from './ProductInCartList.module.scss';
-
-const getCart = (state: RootState) => state.cart;
 
 const ProductInCartList = () => {
   const { status, data } = useSelector(getCart);
