@@ -1,24 +1,42 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import Button from '@/components/common/Button/Button';
 import Input from '@/components/common/Input/Input';
+import { useAccessToken } from '@/hooks/useAccessToken';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
-import { fetchCheckPromocode } from '@/store/reducers/promocodeReducer';
-import { getPromocode } from '@/store/selectors/promocodeSelectors';
+import { fetchApplyPromocode, fetchCancelPromocode } from '@/store/reducers/cartReducer';
+import { getCart } from '@/store/selectors/cartSelectors';
 
 import s from './Promocode.module.scss';
 
 const Promocode = () => {
   const dispatch = useAppDispatch();
-  const { promocode, status } = useSelector(getPromocode);
+  const { promocode, status } = useSelector(getCart);
   const [code, setCode] = useState(promocode?.code || '');
+  const accessToken = useAccessToken();
 
-  const onConfirmPromocode = async () => {
+  useEffect(() => {
+    if (promocode) {
+      setCode(promocode.code);
+    } else {
+      setCode('');
+    }
+  }, [promocode]);
+
+  const onApplyPromocode = async () => {
     try {
-      await dispatch(fetchCheckPromocode(code));
+      await dispatch(fetchApplyPromocode({ code, accessToken }));
+    } catch (error) {
+      // alert('Такого промокода не существует'); // TODO: сделать свой алерт
+    }
+  };
+
+  const onCancelPromocode = async () => {
+    try {
+      await dispatch(fetchCancelPromocode(accessToken));
     } catch (error) {
       // alert('Такого промокода не существует'); // TODO: сделать свой алерт
     }
@@ -48,15 +66,16 @@ const Promocode = () => {
         <Input
           placeholder="Введите ваш промокод..."
           value={code}
+          disabled={status === 'loading/all' || status === 'loading/promocode'}
           onChange={(event) => setCode(event.target.value)}
-          onKeyDown={(event) => event.key === 'Enter' && onConfirmPromocode()}
+          onKeyDown={(event) => event.key === 'Enter' && !promocode && onApplyPromocode()}
         />
         <Button
           variant="contained"
-          onClick={onConfirmPromocode}
-          disabled={status === 'loading'}
+          onClick={promocode ? onCancelPromocode : onApplyPromocode}
+          disabled={status === 'loading/all' || status === 'loading/promocode'}
         >
-          Применить
+          {promocode ? 'Отменить' : 'Применить'}
         </Button>
       </div>
     </div>

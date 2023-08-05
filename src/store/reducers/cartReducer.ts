@@ -5,39 +5,39 @@ import CartApi from '@/http/CartApi';
 export const fetchAllProductsInCart = createAsyncThunk(
   'cart/fetchAllProductsInCart',
   async (accessToken?: string) => {
-    const data = await CartApi.getAll(accessToken);
+    const response = await CartApi.getAll(accessToken);
 
-    if ('message' in data) {
+    if ('message' in response) {
       return [];
     }
 
-    return data;
+    return response;
   },
 );
 
 export const fetchAddToCart = createAsyncThunk(
   'cart/fetchAddToCart',
   async ({ id, accessToken }: { id: number; accessToken: string }) => {
-    const data = await CartApi.add(id, accessToken);
+    const response = await CartApi.add(id, accessToken);
 
-    if (data.token) {
-      localStorage.setItem('CART_TOKEN', data.token);
+    if (response.token) {
+      localStorage.setItem('CART_TOKEN', response.token);
     }
 
-    return data;
+    return response;
   },
 );
 
 export const fetchDeleteFromCart = createAsyncThunk(
   'cart/fetchDeleteFromCart',
   async ({ id, accessToken }: { id: number; accessToken: string }) => {
-    const data = await CartApi.delete(id, accessToken);
+    const response = await CartApi.delete(id, accessToken);
 
-    if (data.token) {
-      localStorage.setItem('CART_TOKEN', data.token);
+    if (response.token) {
+      localStorage.setItem('CART_TOKEN', response.token);
     }
 
-    return data;
+    return response;
   },
 );
 
@@ -61,13 +61,64 @@ export const fetchDeleteAllFromCart = createAsyncThunk(
   },
 );
 
-type CartStateType = {
-  data: Array<ProductInCart>;
-  status: 'loading' | 'loading/one' | 'loading/all' | 'finished' | 'error';
+export const fetchApplyPromocode = createAsyncThunk(
+  'cart/fetchApplyPromocode',
+  async ({ code, accessToken }: { code: string, accessToken: string }) => {
+    const response = await CartApi.applyPromocode(code, accessToken);
+
+    if ('message' in response) {
+      throw new Error(response.message);
+    }
+
+    return response;
+  },
+);
+
+export const fetchCancelPromocode = createAsyncThunk(
+  'cart/fetchCancelPromocode',
+  async (accessToken: string) => {
+    const response = await CartApi.cancelPromocode(accessToken);
+
+    if (!response.success || 'message' in response) {
+      throw new Error('Ошибка при отмене промокода');
+    }
+  },
+);
+
+export const fetchConfirmOrder = createAsyncThunk(
+  'cart/fetchConfirmOrder',
+  async ({
+    formData,
+    accessToken,
+  }: {
+    formData: { [key: string]: string },
+    accessToken: string,
+  }) => {
+    const response = await CartApi.confirmOrder(formData, accessToken);
+
+    if ('message' in response || !response.success) {
+      throw new Error('Ошибка при оформление заказа');
+    }
+
+    return response;
+  },
+);
+
+type CartState = {
+  productsInCart: Array<ProductInCart>;
+  promocode: null | Promocode;
+  status:
+  | 'loading'
+  | 'loading/promocode'
+  | 'loading/one'
+  | 'loading/all'
+  | 'finished'
+  | 'error';
 };
 
-const initialState: CartStateType = {
-  data: [],
+const initialState: CartState = {
+  productsInCart: [],
+  promocode: null,
   status: 'loading/all',
 };
 
@@ -81,7 +132,8 @@ const cartSlices = createSlice({
         state.status = 'loading/all';
       })
       .addCase(fetchAllProductsInCart.fulfilled, (state, { payload }) => {
-        state.data = payload;
+        state.productsInCart = payload.productsInCart;
+        state.promocode = payload.promocode;
         state.status = 'finished';
       })
       .addCase(fetchAllProductsInCart.rejected, (state) => {
@@ -91,13 +143,13 @@ const cartSlices = createSlice({
         state.status = 'loading/one';
       })
       .addCase(fetchAddToCart.fulfilled, (state, { payload }) => {
-        const candidate = state.data.find(
+        const candidate = state.productsInCart.find(
           ({ product }) => product.id === payload.product.id,
         );
         if (candidate?.count) {
           candidate.count += 1;
         } else {
-          state.data.push(payload);
+          state.productsInCart.push(payload);
         }
         state.status = 'finished';
       })
@@ -108,13 +160,13 @@ const cartSlices = createSlice({
         state.status = 'loading/one';
       })
       .addCase(fetchDeleteFromCart.fulfilled, (state, { payload }) => {
-        const candidate = state.data.find(
+        const candidate = state.productsInCart.find(
           ({ product }) => product?.id === payload.product.id,
         );
         if (candidate?.count && candidate.count > 1) {
           candidate.count -= 1;
         } else {
-          state.data = state.data.filter(
+          state.productsInCart = state.productsInCart.filter(
             ({ product }) => product.id !== payload.product.id,
           );
         }
@@ -127,7 +179,7 @@ const cartSlices = createSlice({
         state.status = 'loading/one';
       })
       .addCase(fetchDeleteItemFromCart.fulfilled, (state, { payload }) => {
-        state.data = state.data.filter(({ product }) => product.id !== payload);
+        state.productsInCart = state.productsInCart.filter(({ product }) => product.id !== payload);
         state.status = 'finished';
       })
       .addCase(fetchDeleteItemFromCart.rejected, (state) => {
@@ -137,10 +189,40 @@ const cartSlices = createSlice({
         state.status = 'loading';
       })
       .addCase(fetchDeleteAllFromCart.fulfilled, (state) => {
-        state.data = [];
+        state.productsInCart = [];
         state.status = 'finished';
       })
       .addCase(fetchDeleteAllFromCart.rejected, (state) => {
+        state.status = 'error';
+      })
+      .addCase(fetchApplyPromocode.pending, (state) => {
+        state.status = 'loading/promocode';
+      })
+      .addCase(fetchApplyPromocode.fulfilled, (state, { payload }) => {
+        state.promocode = payload;
+        state.status = 'finished';
+      })
+      .addCase(fetchApplyPromocode.rejected, (state) => {
+        state.status = 'error';
+      })
+      .addCase(fetchCancelPromocode.pending, (state) => {
+        state.status = 'loading/promocode';
+      })
+      .addCase(fetchCancelPromocode.fulfilled, (state) => {
+        state.promocode = null;
+        state.status = 'finished';
+      })
+      .addCase(fetchCancelPromocode.rejected, (state) => {
+        state.status = 'error';
+      })
+      .addCase(fetchConfirmOrder.pending, (state) => {
+        state.status = 'loading/all';
+      })
+      .addCase(fetchConfirmOrder.fulfilled, (state) => {
+        state.productsInCart = [];
+        state.status = 'finished';
+      })
+      .addCase(fetchConfirmOrder.rejected, (state) => {
         state.status = 'error';
       });
   },

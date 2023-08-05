@@ -1,3 +1,8 @@
+interface CategoryCreateResponse {
+  id: number
+  title: string
+}
+
 type CategoryItem = {
   title: string;
   products: Product[];
@@ -18,11 +23,6 @@ type ProductInCart = {
   product: Product;
 };
 
-type CartInteractionResponse = {
-  isAuthorize: boolean;
-  token: null | string;
-} & ProductInCart;
-
 interface User {
   id: number;
   phone: string;
@@ -35,8 +35,12 @@ interface User {
 type Promocode = {
   id: number;
   code: string;
-  type: 'fix' | 'percentage';
+  name?: string;
+  text?: string;
+  discountType: 'fix' | 'percentage';
   value: number;
-  name: string | null;
-  text: string | null;
+  expireType: 'count' | 'date' | 'infinity'
+  date?: Date
+  count?: number
+  counter?: number
 };

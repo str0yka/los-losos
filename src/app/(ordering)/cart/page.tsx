@@ -5,18 +5,18 @@ import { useSelector } from 'react-redux';
 
 import EmptyCart from '@/app/(ordering)/cart/_components/EmptyCart/EmptyCart';
 import ProductInCartList from '@/app/(ordering)/cart/_components/ProductInCartList/ProductInCartList';
+import Promocode from '@/app/(ordering)/cart/_components/Promocode/Promocode';
 import Button from '@/components/common/Button/Button';
 import { useTotalPrice } from '@/hooks/useTotalPrice';
 import { getCart } from '@/store/selectors/cartSelectors';
 
-import Promocode from './_components/Promocode/Promocode';
 import s from './page.module.scss';
 
 const Cart = () => {
   const { totalPriceWithDiscount, isDeliveryFree, priceToFreeDelivery } = useTotalPrice();
-  const { status, data } = useSelector(getCart);
+  const { status, productsInCart } = useSelector(getCart);
 
-  if (!data.length && status !== 'loading/all') return <EmptyCart />;
+  if (!productsInCart.length && status !== 'loading/all') return <EmptyCart />;
 
   return (
     <section className={s.cart}>

@@ -149,10 +149,9 @@ div.skeletonButton {
     pointer-events: none;
     animation: disabled 1s ease infinite;
 
-    background-color: var(--neutralColorDarken);
-
+    background-color: var(--neutralColorTransparent);
     div {
-      background-color: var(--neutralColorDarken);
+      background-color: var(--neutralColorTransparent);
     }
   }
 }

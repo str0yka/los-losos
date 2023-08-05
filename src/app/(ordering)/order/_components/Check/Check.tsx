@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import Skeleton from '@/components/common/Skeleton/Skeleton';
 import { useTotalPrice } from '@/hooks/useTotalPrice';
-import { RootState } from '@/store';
+import { getCart } from '@/store/selectors/cartSelectors';
 import { DELIVERY_PRICE, getClassNames, PRICE_FOR_FREE_DELIVERY } from '@/utils';
 
 import s from './Check.module.scss';
@@ -15,10 +15,7 @@ interface CheckProps {
 }
 
 const Check: React.FC<CheckProps> = ({ className }) => {
-  const { data, status } = useSelector((state: RootState) => state.cart);
-  const promocode = useSelector(
-    (state: RootState) => state.promocode.promocode,
-  );
+  const { productsInCart, promocode, status } = useSelector(getCart);
   const { promocodeDiscount, totalPrice, totalPriceWithDelivery } = useTotalPrice();
   const isDeliveryFree = totalPrice > PRICE_FOR_FREE_DELIVERY;
   const skeletonClassName = getClassNames(s.skeleton, className);
@@ -30,27 +27,22 @@ const Check: React.FC<CheckProps> = ({ className }) => {
     <section className={checkClassName}>
       <h5 className={s.title}>Состав заказа</h5>
       <ul className={s.list}>
-        {data.map(({ product, count }) => (
+        {productsInCart.map(({ product, count }) => (
           <li key={product.id} className={s.item}>
             <div className={s.itemInfo}>
               <h6 className={s.itemTitle}>{product.title}</h6>
               <div className={s.itemDescription}>
                 <span>
-                  {product.weight}
-                  {' '}
-                  г
+                  {product.weight} г
                 </span>
                 <span>
-                  {count}
-                  x
+                  {count}x
                 </span>
               </div>
             </div>
             <div className={s.line} />
             <span className={s.itemPrice}>
-              {product.price * count}
-              {' '}
-              Р
+              {product.price * count} Р
             </span>
           </li>
         ))}
@@ -61,10 +53,7 @@ const Check: React.FC<CheckProps> = ({ className }) => {
             <h6 className={s.itemTitle}>{promocode.code}</h6>
             <div className={s.line} />
             <span className={s.itemPrice}>
-              -
-              {promocodeDiscount}
-              {' '}
-              Р
+              - {promocodeDiscount} Р
             </span>
           </li>
         )}
@@ -80,9 +69,7 @@ const Check: React.FC<CheckProps> = ({ className }) => {
         <h6 className={s.totalPriceTitle}>Сумма</h6>
         <div className={s.line} />
         <span className={s.totalPrice}>
-          {totalPriceWithDelivery}
-          {' '}
-          Р
+          {totalPriceWithDelivery} Р
         </span>
       </div>
     </section>

@@ -8,12 +8,12 @@ export const useTotalPrice = () => {
   const totalPrice = useSelector(getTotalPrice);
 
   const promocodeDiscount = useSelector((state: RootState) => {
-    if (!state.promocode.promocode) return 0;
+    if (!state.cart.promocode) return 0;
 
-    const { value } = state.promocode.promocode;
-    const { type } = state.promocode.promocode;
+    const { value } = state.cart.promocode;
+    const { discountType } = state.cart.promocode;
 
-    if (type === 'fix') return value;
+    if (discountType === 'fix') return value;
 
     return (value / 100) * totalPrice;
   });

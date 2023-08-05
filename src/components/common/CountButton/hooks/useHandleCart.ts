@@ -3,17 +3,16 @@ import { useSelector } from 'react-redux';
 
 import { useAccessToken } from '@/hooks/useAccessToken';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
-import { RootState } from '@/store';
 import { fetchAddToCart, fetchDeleteFromCart } from '@/store/reducers/cartReducer';
+import { getCart } from '@/store/selectors/cartSelectors';
 
 export const useHandleCart = (id: number) => {
-  const [isLoading, setIsLoading] = useState(false);
   const dispatch = useAppDispatch();
-  const count: number = useSelector((state: RootState) => {
-    const candidate = state.cart.data.find(({ product }) => product?.id === id);
-    if (!candidate) return 0;
-    return candidate.count;
-  });
+  const { status, productsInCart } = useSelector(getCart);
+  const isFirstLoading = status === 'loading/all';
+  const [isLoading, setIsLoading] = useState(false);
+  const candidate = productsInCart.find((item) => item.product.id === id);
+  const count = candidate?.count || 0;
   const accessToken = useAccessToken();
 
   const handleCart = async (action: 'add' | 'delete') => {
@@ -41,6 +40,6 @@ export const useHandleCart = (id: number) => {
     addToCart,
     deleteFromCart,
     count,
-    isLoading,
+    isLoading: isLoading || isFirstLoading,
   };
 };

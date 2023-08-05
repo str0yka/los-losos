@@ -21,7 +21,6 @@ interface RootLayoutInterface {
 // 4. Кастомная страница авторизации
 // 5. Для изображений использовать <Image></Image>
 // 17. Сделать UI-kit (input, button, arrowbutton || button with svg, icon)
-// 25. Связать CountButton с состояние loading/all
 // 26. У промокод должно быть больше опций (когда истекает + мин. сумма применения и тд)
 // + они должны привязваться к корзине
 // 27. Создать сущность orders и привязать её к пользователю
@@ -29,10 +28,11 @@ interface RootLayoutInterface {
 // 29. lazy load для category
 // 30. intersection observer для category
 // 33. Reselect
-// 34. (group) route для order cart confirm
 // 35. Структура компонентов
+// 36. Обработать случай, когда промокод не верный
+// 37. Страница профиля
+// 38. Переписать все запросы на axios + типизация ответов
 
-// 11. Сделать кастомные запросы fetch
 const RootLayout: React.FC<RootLayoutInterface> = ({ children }) => (
   <html lang="ru" className={MuseoSans.className}>
     <body>

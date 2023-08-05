@@ -10,12 +10,12 @@ import { getCart } from '@/store/selectors/cartSelectors';
 import s from './ProductInCartList.module.scss';
 
 const ProductInCartList = () => {
-  const { status, data } = useSelector(getCart);
+  const { status, productsInCart } = useSelector(getCart);
 
   return (
     <section className={s.list}>
       {status === 'loading/all' && <Skeleton />}
-      {data.map(({ product }) => (
+      {productsInCart.map(({ product }) => (
         <ProductItem
           key={product.id}
           product={product}

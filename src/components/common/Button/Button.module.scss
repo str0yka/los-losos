@@ -35,17 +35,6 @@
   }
 }
 
-.disabled {
-  background-color: var(--secondaryColor);
-  border: var(--secondaryColorLight) 1px solid;
-  color: var(--neutralColor);
-  transition: all 0.2s ease;
-
-  &.hover:hover {
-    border-color: var(--primaryColorHover);
-  }
-}
-
 .uppercase {
   text-transform: uppercase;
 }
@@ -73,5 +62,19 @@
 a {
   .button {
     width: 100%;
+  }
+}
+
+.disabled {
+  background-color: var(--secondaryColor);
+  border: var(--secondaryColorLight) 1px solid;
+  color: var(--neutralColor);
+  transition: all 0.2s ease;
+  
+  cursor: default;
+
+  &.hover:hover {
+    background-color: var(--secondaryColor);
+    border-color: var(--secondaryColorLight);
   }
 }

@@ -1,17 +1,24 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import React from 'react';
 
 import AddressForm from '@/app/(ordering)/order/_components/AddressForm/AddressForm';
 import Button from '@/components/common/Button/Button';
 import Input from '@/components/common/Input/Input';
 import Textarea from '@/components/common/Textarea/Textarea';
+import { useAccessToken } from '@/hooks/useAccessToken';
+import { useAppDispatch } from '@/hooks/useAppDispatch';
 import { useForm } from '@/hooks/useForm';
+import { fetchConfirmOrder } from '@/store/reducers/cartReducer';
 
 import s from './OrderForm.module.scss';
 
 const OrderForm = () => {
-  const { formData, handleInputChange, handleSubmit } = useForm({
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+  const accessToken = useAccessToken();
+  const { handleInputChange, handleSubmit } = useForm({
     name: '',
     phone: '',
     street: '',
@@ -22,7 +29,14 @@ const OrderForm = () => {
     apartment: '',
     addressComment: '',
     orderComment: '',
-  }, (data) => console.log(data));
+  }, async (formData) => {
+    try {
+      await dispatch(fetchConfirmOrder({ formData, accessToken }));
+      router.push('/profile');
+    } catch (error) {
+      // alert('Ошибка при оформление заказа') // TODO: кастомный алерт
+    }
+  });
 
   return (
     <div>

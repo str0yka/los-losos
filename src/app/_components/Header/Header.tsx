@@ -12,7 +12,11 @@ const Header = () => (
     <header className={s.header}>
       <div className={s.leftSide}>
         <Link href="/">
-          <img src="/images/logo.png" alt="" className={s.logo} />
+          <img
+            src="/images/logo.png"
+            alt=""
+            className={s.logo}
+          />
         </Link>
         <div className={s.contact}>
           <p>Связаться с нами</p>
@@ -20,10 +24,18 @@ const Header = () => (
         </div>
       </div>
       <div className={s.rightSide}>
-        <Button className={s.button} rounded>
+        <Button
+          className={s.button}
+          rounded
+          href="/profile"
+        >
           профиль
         </Button>
-        <Button className={s.contactButton} rounded variant="contained">
+        <Button
+          className={s.contactButton}
+          rounded
+          variant="contained"
+        >
           позвони нам
         </Button>
         <BurgerMenu />

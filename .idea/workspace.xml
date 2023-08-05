@@ -5,43 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb1147d6-97be-445b-bdbd-7e90d4b13025" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/(ordering)/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/profile/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/_components/HomeHeader/HomeHeader.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/HomeHeader/HomeHeader.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/options.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/auth/[...nextauth]/options.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/cart/_components/EmptyCart/EmptyCart.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/cart/_components/EmptyCart/EmptyCart.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/cart/_components/ProductInCartList/ProductInCartList.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/cart/_components/ProductInCartList/ProductInCartList.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/cart/_components/Promocode/Promocode.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/cart/_components/Promocode/Promocode.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/cart/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/cart/page.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/cart/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(ordering)/cart/_components/ProductInCartList/ProductInCartList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(ordering)/cart/_components/ProductInCartList/ProductInCartList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(ordering)/cart/_components/Promocode/Promocode.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(ordering)/cart/_components/Promocode/Promocode.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(ordering)/cart/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(ordering)/cart/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_components/ProductItem/ProductItem.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/ProductItem/ProductItem.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/order/_components/AddressForm/AddressForm.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/order/_components/AddressForm/AddressForm.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/order/_components/Check/Check.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/order/_components/Check/Check.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/order/_components/OrderForm/OrderForm.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/order/_components/OrderForm/OrderForm.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/order/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/order/page.module.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/order/page.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DeleteFromCartButton/DeleteFromCartButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DeleteFromCartButton/DeleteFromCartButton.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StoreProvider/StoreProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StoreProvider/StoreProvider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/CountButton/CountButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/CountButton/CountButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/CountButton/CountButton.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/CountButton/CountButton.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/CountButton/hooks/useHandleCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/CountButton/hooks/useHandleCart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Input/Input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Input/Input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Modal/Modal.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Modal/Modal.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useAppDispatch.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useAppDispatch.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useTotalCount.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useTotalCount.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hooks/useTotalPrice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useTotalPrice.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/slices/cartSlices.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/slices/promocodeSlice.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/store.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/visually-hidden.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/http/CartApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/CartApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/http/UserApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/UserApi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/promocodeReducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/selectors/cartSelectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/selectors/cartSelectors.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/selectors/promocodeSelectors.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +99,13 @@
       <workItem from="1691057222992" duration="30000" />
       <workItem from="1691058474142" duration="339000" />
       <workItem from="1691059576193" duration="774000" />
-      <workItem from="1691060406688" duration="472000" />
+      <workItem from="1691060406688" duration="2019000" />
+      <workItem from="1691128732986" duration="1943000" />
+      <workItem from="1691141095684" duration="68000" />
+      <workItem from="1691144695549" duration="453000" />
+      <workItem from="1691147236951" duration="3070000" />
+      <workItem from="1691243248660" duration="751000" />
+      <workItem from="1691247405321" duration="487000" />
     </task>
     <servers />
   </component>
