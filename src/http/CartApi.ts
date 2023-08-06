@@ -71,6 +71,18 @@ class CartApi {
 
     return response;
   }
+
+  static async getOrders(accessToken: string) {
+    const response = await AppFetch.get('/cart/orders', {
+      headers: { authorization: accessToken },
+    });
+
+    if ('message' in response) {
+      throw new Error(response.message);
+    }
+
+    return response;
+  }
 }
 
 export default CartApi;

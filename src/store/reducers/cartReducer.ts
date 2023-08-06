@@ -220,6 +220,7 @@ const cartSlices = createSlice({
       })
       .addCase(fetchConfirmOrder.fulfilled, (state) => {
         state.productsInCart = [];
+        state.promocode = null;
         state.status = 'finished';
       })
       .addCase(fetchConfirmOrder.rejected, (state) => {

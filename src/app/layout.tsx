@@ -32,6 +32,7 @@ interface RootLayoutInterface {
 // 36. Обработать случай, когда промокод не верный
 // 37. Страница профиля
 // 38. Переписать все запросы на axios + типизация ответов
+// 39. AdminProvider
 
 const RootLayout: React.FC<RootLayoutInterface> = ({ children }) => (
   <html lang="ru" className={MuseoSans.className}>

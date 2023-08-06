@@ -44,3 +44,16 @@ type Promocode = {
   count?: number
   counter?: number
 };
+
+interface Order {
+  status: 'accepted' | 'inWork' | 'enRoute' | 'delivered' | 'canceled'
+  cart: {
+    id: number
+    productsInCart: Array<{
+      product: {
+        title: string
+      }
+      count: number
+    }>
+  }
+}

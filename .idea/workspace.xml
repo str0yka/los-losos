@@ -5,27 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb1147d6-97be-445b-bdbd-7e90d4b13025" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/profile/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(ordering)/cart/_components/ProductInCartList/ProductInCartList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(ordering)/cart/_components/ProductInCartList/ProductInCartList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(ordering)/cart/_components/Promocode/Promocode.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(ordering)/cart/_components/Promocode/Promocode.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/(ordering)/cart/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/(ordering)/cart/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/_components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/_components/ProductItem/ProductItem.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_components/ProductItem/ProductItem.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/CountButton/CountButton.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/CountButton/CountButton.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/CountButton/hooks/useHandleCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/CountButton/hooks/useHandleCart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useTotalPrice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useTotalPrice.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/http/CartApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/CartApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/UserApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/UserApi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/cartReducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/promocodeReducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/selectors/cartSelectors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/selectors/cartSelectors.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/selectors/promocodeSelectors.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,26 +28,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/my-projects/5-next-projects/7-los-losos&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Nikita\\AppData\\Roaming\\npm\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\my-projects\\5-next-projects\\7-los-losos\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "D:/my-projects/5-next-projects/7-los-losos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Nikita\\AppData\\Roaming\\npm\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "D:\\my-projects\\5-next-projects\\7-los-losos\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\my-projects\5-next-projects\7-los-losos\src\app\(ordering)\_components" />
@@ -106,6 +88,8 @@
       <workItem from="1691147236951" duration="3070000" />
       <workItem from="1691243248660" duration="751000" />
       <workItem from="1691247405321" duration="487000" />
+      <workItem from="1691314956074" duration="2312000" />
+      <workItem from="1691321346206" duration="8852000" />
     </task>
     <servers />
   </component>

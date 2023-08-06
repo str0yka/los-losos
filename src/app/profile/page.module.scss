@@ -1,0 +1,18 @@
+.orderList {
+  display: grid;
+  grid-auto-rows: minmax(175px, auto);
+  gap: 10px;
+}
+
+@media (min-width: 768px) {
+  .orderList {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .orderList {
+    gap: 35px;
+  }
+}
