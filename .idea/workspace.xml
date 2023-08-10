@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb1147d6-97be-445b-bdbd-7e90d4b13025" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/profile/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/profile/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/http/CartApi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/http/CartApi.ts" afterDir="false" />
-    </list>
+    <list default="true" id="cb1147d6-97be-445b-bdbd-7e90d4b13025" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,11 +85,19 @@
       <workItem from="1691243248660" duration="751000" />
       <workItem from="1691247405321" duration="487000" />
       <workItem from="1691314956074" duration="2312000" />
-      <workItem from="1691321346206" duration="8852000" />
+      <workItem from="1691321346206" duration="9947000" />
+      <workItem from="1691394847323" duration="5000" />
+      <workItem from="1691429027521" duration="14000" />
+      <workItem from="1691662972785" duration="20668000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/hooks/useRequest.d.ts" />
+      </list>
+    </option>
   </component>
 </project>

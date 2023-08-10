@@ -2,84 +2,138 @@
 
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
-import AddressForm from '@/app/(ordering)/order/_components/AddressForm/AddressForm';
 import Button from '@/components/common/Button/Button';
 import Input from '@/components/common/Input/Input';
 import Textarea from '@/components/common/Textarea/Textarea';
 import { useAccessToken } from '@/hooks/useAccessToken';
 import { useAppDispatch } from '@/hooks/useAppDispatch';
-import { useForm } from '@/hooks/useForm';
 import { fetchConfirmOrder } from '@/store/reducers/cartReducer';
 
 import s from './OrderForm.module.scss';
+
+type FormValues = {
+  name: string;
+  phone: string;
+  street: string;
+  home: string;
+  building: string;
+  entrance: string;
+  floor: string;
+  apartment: string;
+  addressComment: string;
+  orderComment: string;
+};
 
 const OrderForm = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const accessToken = useAccessToken();
-  const { handleInputChange, handleSubmit } = useForm({
-    name: '',
-    phone: '',
-    street: '',
-    home: '',
-    building: '',
-    entrance: '',
-    floor: '',
-    apartment: '',
-    addressComment: '',
-    orderComment: '',
-  }, async (formData) => {
+  const { register, handleSubmit } = useForm<FormValues>({
+    defaultValues: {
+      name: '',
+      phone: '',
+      street: '',
+      home: '',
+      building: '',
+      entrance: '',
+      floor: '',
+      apartment: '',
+      addressComment: '',
+      orderComment: '',
+    },
+  });
+
+  const onSubmit = async (formData: FormValues) => {
     try {
       await dispatch(fetchConfirmOrder({ formData, accessToken }));
       router.push('/profile');
     } catch (error) {
       // alert('Ошибка при оформление заказа') // TODO: кастомный алерт
     }
-  });
+  };
 
   return (
     <div>
       <h2 className={s.title}>Личные данные</h2>
       <form
         className={s.form}
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <ul className={s.formList}>
           <li className={s.formItem}>
             <span>Имя &#128527;</span>
             <Input
-              name="name"
-              onChange={handleInputChange}
+              {...register('name', { required: true })}
               placeholder="Как вас зовут?"
-              required
             />
           </li>
           <li className={s.formItem}>
             <span>Телефон &#9742;</span>
             <Input
+              {...register('phone', { required: true, minLength: 10 })}
               type="tel"
-              name="phone"
-              onChange={handleInputChange}
               placeholder="Ваш номер телефона?"
-              required
             />
           </li>
           <li className={s.formItem}>
             <span>Адрес доставки &#127969;</span>
-            <AddressForm handleInputChange={handleInputChange} />
-          </li>
-          <li className={s.formItem}>
-            <span>Время доставки &#9200;</span>
-            <Input type="time" />
+            <ul className={s.addressForm}>
+              <li className={s.addressMainBlock}>
+                <span>Улица *</span>
+                <Input
+                  {...register('street', { required: true })}
+                  placeholder="Обязательно заполните"
+                />
+              </li>
+              <li>
+                <span>Дом *</span>
+                <Input
+                  {...register('home', { required: true })}
+                  placeholder="И это тоже"
+                />
+              </li>
+              <li>
+                <span>Строение</span>
+                <Input
+                  {...register('building')}
+                />
+              </li>
+              <li>
+                <span>Подъезд</span>
+                <Input
+                  {...register('entrance')}
+                />
+              </li>
+              <li>
+                <span>Этаж</span>
+                <Input
+                  {...register('floor')}
+                />
+              </li>
+              <li>
+                <span>Квартира</span>
+                <Input
+                  {...register('apartment')}
+                />
+              </li>
+              <li className={s.addressTextareaBlock}>
+                <span>Комментарий к адресу</span>
+                <Textarea
+                  {...register('addressComment')}
+                  className={s.textarea}
+                  resize="noResize"
+                  placeholder="Укажите код домофона или другую, важную для курьера, информацию"
+                />
+              </li>
+            </ul>
           </li>
           <li className={s.formItem}>
             <span>Комментарий к заказу &#129300;</span>
             <Textarea
-              name="comment"
-              onChange={handleInputChange}
+              {...register('orderComment', { maxLength: 300 })}
               placeholder="Напишите тут то, что считаете важным"
-              maxLength={300}
               resize="noResize"
               className={s.textarea}
             />

@@ -1,0 +1,28 @@
+.header {
+  position: sticky;
+  top: 0;
+
+  padding: 18px 0;
+
+  background-color: var(--secondaryColorTransparent);
+  backdrop-filter: blur(20px);
+
+  z-index: var(--upperIndex);
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  li {
+    a {
+      font-size: 14px;
+
+      transition: color .2s ease;
+      &:hover {
+        color: var(--primaryColor)
+      }
+    }
+  }
+}

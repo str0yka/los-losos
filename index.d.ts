@@ -1,4 +1,4 @@
-interface CategoryCreateResponse {
+interface CategoryItemWithoutProducts {
   id: number
   title: string
 }

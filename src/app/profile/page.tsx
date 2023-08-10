@@ -39,11 +39,12 @@ const ProfilePage = () => {
 
   return (
     <section className={s.orderList}>
-      {orders?.map((order) => (
-        <OrderItem
-          key={order.cart.id}
-          order={order}
-        />
+      {orders?.reverse()
+        .map((order) => (
+          <OrderItem
+            key={order.cart.id}
+            order={order}
+          />
       ))}
     </section>
 );

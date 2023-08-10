@@ -1,4 +1,6 @@
-import { useEffect, useState } from 'react';
+import {
+ Dispatch, SetStateAction, useEffect, useState,
+} from 'react';
 
 interface RequestOptions {
   dependencies: any[],
@@ -11,7 +13,7 @@ export const useRequest = <T>(
     dependencies: [],
     verification: true,
   },
-): [null | T, boolean, string] => {
+): [null | T, boolean, string, Dispatch<SetStateAction<T | null>>] => {
   const [data, setData] = useState<null | T>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
@@ -26,5 +28,5 @@ export const useRequest = <T>(
     }
   }, options.dependencies);
 
-  return [data, loading, error];
+  return [data, loading, error, setData];
 };

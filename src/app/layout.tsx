@@ -33,6 +33,9 @@ interface RootLayoutInterface {
 // 37. Страница профиля
 // 38. Переписать все запросы на axios + типизация ответов
 // 39. AdminProvider
+// 40. page.tsx компоненты переименовать в ...Page
+// 41. Типизация fetch
+// 42. Типизация useRequest
 
 const RootLayout: React.FC<RootLayoutInterface> = ({ children }) => (
   <html lang="ru" className={MuseoSans.className}>

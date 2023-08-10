@@ -53,7 +53,7 @@ const Check: React.FC<CheckProps> = ({ className }) => {
             <h6 className={s.itemTitle}>{promocode.code}</h6>
             <div className={s.line} />
             <span className={s.itemPrice}>
-              - {promocodeDiscount} Р
+              -{promocodeDiscount} Р
             </span>
           </li>
         )}
