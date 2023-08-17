@@ -46,7 +46,7 @@ const CreateProduct = () => {
       title: '',
       price: 0,
       weight: 0,
-      categoryId: 0,
+      categoryId: 1,
     },
     onSubmit,
   });

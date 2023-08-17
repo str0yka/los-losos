@@ -6,12 +6,12 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: 130px auto;
+  grid-template-columns: 110px auto;
   gap: 8px;
 
   padding: 8px 0;
 
-  border-bottom: var(--secondaryColorLighten) 1px solid;
+  border-bottom: var(--secondaryColorBright) 1px solid;
 
   &:last-child {
     border-bottom: none;
@@ -20,8 +20,8 @@
   .image {
     overflow: hidden;
 
-    background-color: var(--secondaryColorLighten);
-    border-radius: 15px;
+    background-color: var(--secondaryColorBright);
+    border-radius: 7px;
 
     img {
       width: 100%;
@@ -39,7 +39,7 @@
 
   .info {
     .title {
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
 
       display: flex;
@@ -50,13 +50,13 @@
       span {
         flex-shrink: 0;
 
-        font-size: 14px;
+        font-size: 12px;
         color: var(--neutralColorDarken);
       }
     }
 
     .foods {
-      font-size: 14px;
+      font-size: 12px;
       color: var(--neutralColorDarken);
       display: -webkit-box;
       -webkit-line-clamp: 3; // количество строк
@@ -72,7 +72,31 @@
 
     .price {
       flex-shrink: 0;
-      font-size: 14px;
+      font-size: 13px;
+    }
+  }
+}
+
+@media (min-width: 350px) {
+  .product {
+    .info {
+      .title {
+        font-size: 16px;
+
+        span {
+          font-size: 14px;
+        }
+      }
+
+      .foods {
+        font-size: 14px;
+      }
+    }
+
+    .priceBlock {
+      .price {
+        font-size: 14px;
+      }
     }
   }
 }
@@ -83,9 +107,9 @@
   }
 
   .product.large {
-    background-color: var(--secondaryColorLighten);
+    background-color: var(--secondaryColorBright);
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 12px;
     border-bottom: none;
 
     display: flex;
@@ -135,7 +159,7 @@
 
     padding: 20px;
 
-    background-color: var(--secondaryColorLighten);
+    background-color: var(--secondaryColorBright);
     border-radius: 10px;
 
     .image {

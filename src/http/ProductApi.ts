@@ -2,8 +2,12 @@ import AppFetch from '@/http/index';
 import { API_URL } from '@/utils';
 
 class ProductApi {
-  static async getProducts() {
+  static async getAll() {
     const response = await AppFetch.get('/product');
+
+    if ('message' in response) {
+      throw new Error(response.message);
+    }
 
     return response;
   }
@@ -32,6 +36,19 @@ class ProductApi {
    }
 
    return response;
+  }
+
+  static async delete(id: number, accessToken: string) {
+    const response = await AppFetch.delete('/product', {
+      headers: { authorization: accessToken },
+      body: { id },
+    });
+
+    if ('message' in response) {
+      throw new Error(response.message);
+    }
+
+    return response;
   }
 }
 

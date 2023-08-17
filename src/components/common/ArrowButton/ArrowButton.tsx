@@ -7,14 +7,14 @@ import s from './ArrowButton.module.scss';
 
 interface ArrowButtonProps extends ComponentProps<'button'> {
   direction: 'left' | 'right';
-  href?: string;
-  className?: string
+  href?: string; // TODO: href у кнопки со стрелочкой?
+  className?: string // TODO: classNames не обязательный, можно не указывать явно
 }
 
-const ArrowButton: React.FC<ArrowButtonProps> = ({
+const ArrowButton: React.FC<ArrowButtonProps> = ({ // TODO: ArrowButton должна быть в components/common/Button
  direction, href, className, ...buttonProps
 }) => {
-  const arrow = (
+  const arrow = ( // TODO: у иконок должна быть своя директория в components/common
     <svg
       className={direction === 'right' ? s.rightDirection : undefined}
       width="14"

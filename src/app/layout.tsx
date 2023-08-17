@@ -36,6 +36,7 @@ interface RootLayoutInterface {
 // 40. page.tsx компоненты переименовать в ...Page
 // 41. Типизация fetch
 // 42. Типизация useRequest
+// 43. fetchJSON и fetchFormData
 
 const RootLayout: React.FC<RootLayoutInterface> = ({ children }) => (
   <html lang="ru" className={MuseoSans.className}>

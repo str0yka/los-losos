@@ -1,0 +1,31 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  font-size: 14px;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.radioList {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}

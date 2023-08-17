@@ -30,7 +30,7 @@ const OrderForm = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const accessToken = useAccessToken();
-  const { register, handleSubmit } = useForm<FormValues>({
+  const { register, handleSubmit, formState: { isSubmitting } } = useForm<FormValues>({
     defaultValues: {
       name: '',
       phone: '',
@@ -145,6 +145,7 @@ const OrderForm = () => {
           size="large"
           textVariant="capitalize-first-latter"
           type="submit"
+          disabled={isSubmitting}
         >
           Оформить заказ
           <svg

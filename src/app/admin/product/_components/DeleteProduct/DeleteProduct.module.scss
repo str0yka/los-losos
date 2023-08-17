@@ -1,0 +1,29 @@
+.list {
+  margin-top: 15px;
+  padding: 0 15px;
+
+  border: 1px var(--secondaryColorLight) solid;
+  border-radius: 10px;
+
+  li {
+    display: grid;
+    grid-template-columns: 8fr 1fr 1fr 1fr;
+    grid-column-gap: 50px;
+
+    padding: 15px 0;
+
+    font-size: 14px;
+  }
+}
+
+.deleteButton {
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.titleBlock {
+  color: var(--secondaryColorLight)
+}

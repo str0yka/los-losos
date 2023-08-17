@@ -29,7 +29,7 @@ const ProductItem: React.FC<ProductItemProps> = ({
       <div className={s.nonImage}>
         <div className={s.info}>
           <h3 className={s.title}>
-            {product.title || 'Название продукта отсутствует'}
+            {product.title || 'Без названия'}
             <span>
               {product.weight || 0} г
             </span>

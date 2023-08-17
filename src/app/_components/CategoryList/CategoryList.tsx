@@ -2,18 +2,25 @@ import React from 'react';
 
 import ProductItem from '@/app/_components/ProductItem/ProductItem';
 
-import styles from './CategoryList.module.scss';
+import s from './CategoryList.module.scss';
 
 interface CategoryListProps {
   category: CategoryItem;
 }
 
 const CategoryList: React.FC<CategoryListProps> = ({ category }) => (
-  <section className={styles.category} id={category.title}>
-    <h2 className={styles.title}>{category.title}</h2>
-    <div className={styles.list}>
+  <section
+    id={category.title}
+    className={s.category}
+  >
+    <h2 className={s.title}>{category.title}</h2>
+    <div className={s.list}>
       {category.products.map((product: Product) => (
-        <ProductItem key={product.id} product={product} size="large" />
+        <ProductItem
+          key={product.id}
+          product={product}
+          size="large"
+        />
       ))}
     </div>
   </section>

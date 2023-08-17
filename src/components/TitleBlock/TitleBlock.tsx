@@ -6,7 +6,7 @@ import s from './TitleBlock.module.scss';
 
 interface TitleBlockProps {
   title: string;
-  backTo: string;
+  backTo: string; // TODO: string || () => navigate.push(-1)
   rightSide?: React.ReactNode;
 }
 
@@ -17,7 +17,10 @@ const TitleBlock: React.FC<TitleBlockProps> = ({
 }) => (
   <div className={s.titleBlock}>
     <div className={s.title}>
-      <ArrowButton direction="left" href={backTo} />
+      <ArrowButton
+        direction="left"
+        href={backTo}
+      />
       <h1>{title}</h1>
     </div>
     {rightSide}

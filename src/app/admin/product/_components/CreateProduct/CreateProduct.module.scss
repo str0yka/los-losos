@@ -3,7 +3,7 @@
   flex-direction: column;
 
   border: 1px var(--secondaryColorLight) solid;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .preview {
@@ -154,17 +154,18 @@
   align-items: center;
   justify-content: center;
 
-  border-radius: 20px;
-  border: 1px var(--secondaryColorLight) solid;
+  border-radius: 10px;
+  border: 1px var(--secondaryColorLighten) solid;
 
   font-size: 14px;
   color: var(--secondaryColorLight);
 
   cursor: pointer;
 
-  transition: color .2s ease;
+  transition: color .2s ease, border-color .2s ease;
 
   &:hover {
+    border: 1px var(--secondaryColorLight) solid;
     color: var(--neutralColorDarken)
   }
 }
