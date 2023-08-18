@@ -6,8 +6,6 @@ interface VisuallyHiddenProps {
   children: React.ReactNode
 }
 
-const VisuallyHidden: React.FC<VisuallyHiddenProps> = ({ children }) => (
+export const VisuallyHidden: React.FC<VisuallyHiddenProps> = ({ children }) => (
   <span className={s.visuallyHidden}>{children}</span>
 );
-
-export default VisuallyHidden;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Button from '@/components/common/Button/Button';
+import { Button } from '~ui';
 
 import s from './NotFound.module.scss';
 
@@ -15,8 +15,6 @@ const EmptyCart = () => (
       className={s.button}
       variant="contained"
       size="large"
-      textVariant="capitalize-first-latter"
-      href="/"
     >
       Перейти в меню
     </Button>

@@ -8,13 +8,13 @@
   justify-content: center;
 
   border-radius: 20px;
-  background: var(--primaryColorGradient);
+  background: var(--color-primary-500);
 
   font-size: 36px;
-  color: var(--neutralColor);
+  color: var(--color-neutral-1-200);
 
   span {
-    color: var(--primaryColorLight);
+    color: var(--color-primary-200);
   }
 }
 

@@ -3,10 +3,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Skeleton from '@/components/common/Skeleton/Skeleton';
-import { useTotalPrice } from '@/hooks/useTotalPrice';
-import { getCart } from '@/store/selectors/cartSelectors';
-import { DELIVERY_PRICE, getClassNames, PRICE_FOR_FREE_DELIVERY } from '@/utils';
+import { Skeleton } from '~ui';
+import { useTotalPrice } from '~hooks';
+import { getCart } from '~store';
+import { DELIVERY_PRICE, PRICE_FOR_FREE_DELIVERY } from '~utils/consts';
+import { getClassName } from '~utils/helpers';
 
 import s from './Check.module.scss';
 

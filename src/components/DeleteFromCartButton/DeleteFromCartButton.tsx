@@ -2,39 +2,38 @@
 
 import React from 'react';
 
-import VisuallyHidden from '@/components/common/VisuallyHidden/VisuallyHidden';
-import { useAccessToken } from '@/hooks/useAccessToken';
-import { useAppDispatch } from '@/hooks/useAppDispatch';
-import { fetchDeleteAllFromCart, fetchDeleteItemFromCart } from '@/store/reducers/cartReducer';
-import { getClassNames } from '@/utils';
+import { useAccessToken, useAppDispatch } from '~hooks';
+import { fetchRemoveAllProductsFromCart, fetchRemoveProductFromCart } from '~store';
+import { VisuallyHidden } from '~ui';
+import { getClassName } from '~utils/helpers';
 
 import s from './DeleteFromCartButton.module.scss';
 
 interface DeleteFromCartButtonProps {
-  id?: number;
+  productId?: number;
   className?: string;
 }
 
-const DeleteFromCartButton: React.FC<DeleteFromCartButtonProps> = ({
-  id,
+export const DeleteFromCartButton: React.FC<DeleteFromCartButtonProps> = ({
+  productId,
   className,
 }) => {
   const dispatch = useAppDispatch();
   const accessToken = useAccessToken();
 
   const onDeleteFromCart = () => {
-    if (id) {
-      dispatch(fetchDeleteItemFromCart({ accessToken, id }));
+    if (productId) {
+      dispatch(fetchRemoveProductFromCart({ accessToken, productId }));
     } else {
       const wantDelete = confirm(
         'Вы действительно хотите удалить все товары из корзины?', // TODO: кастомный confirm
       );
       if (!wantDelete) return;
-      dispatch(fetchDeleteAllFromCart(accessToken));
+      dispatch(fetchRemoveAllProductsFromCart(accessToken));
     }
   };
 
-  const buttonClassName = getClassNames(s.button, className);
+  const buttonClassName = getClassName(s.button, className);
 
   return (
     <button className={buttonClassName} onClick={onDeleteFromCart} type="button">
@@ -57,9 +56,7 @@ const DeleteFromCartButton: React.FC<DeleteFromCartButtonProps> = ({
           </clipPath>
         </defs>
       </svg>
-      <VisuallyHidden>Удалить {id ? 'все товары' : 'товар'} из корзины</VisuallyHidden>
+      <VisuallyHidden>Удалить {productId ? 'все товары' : 'товар'} из корзины</VisuallyHidden>
     </button>
   );
 };
-
-export default DeleteFromCartButton;

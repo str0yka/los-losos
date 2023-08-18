@@ -1,14 +1,13 @@
 import React from 'react';
 
-import ProductItem from '@/app/_components/ProductItem/ProductItem';
-
+import { ProductItem } from './../../_components';
 import s from './CategoryList.module.scss';
 
 interface CategoryListProps {
   category: CategoryItem;
 }
 
-const CategoryList: React.FC<CategoryListProps> = ({ category }) => (
+export const CategoryList: React.FC<CategoryListProps> = ({ category }) => (
   <section
     id={category.title}
     className={s.category}
@@ -25,5 +24,3 @@ const CategoryList: React.FC<CategoryListProps> = ({ category }) => (
     </div>
   </section>
 );
-
-export default CategoryList;

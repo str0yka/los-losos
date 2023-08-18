@@ -1,12 +1,11 @@
-import '@/styles/global.scss';
+import '~styles/global.scss';
+import '~styles/zero.scss';
 
 import { Metadata } from 'next';
 import React from 'react';
 
-import Header from '@/app/_components/Header/Header';
-import AuthProvider from '@/components/AuthProvider/AuthProvider';
-import StoreProvider from '@/components/StoreProvider/StoreProvider';
-import { MuseoSans } from '@/fonts';
+import { AuthProvider, Header, StoreProvider } from '~components';
+import { museoSans } from '~fonts';
 
 export const metadata: Metadata = {
   title: 'Лось-Лосось',
@@ -39,7 +38,7 @@ interface RootLayoutInterface {
 // 43. fetchJSON и fetchFormData
 
 const RootLayout: React.FC<RootLayoutInterface> = ({ children }) => (
-  <html lang="ru" className={MuseoSans.className}>
+  <html lang="ru" className={museoSans.className}>
     <body>
       <AuthProvider>
         <StoreProvider>

@@ -2,12 +2,12 @@
 
 import React from 'react';
 
-import ProgressLineButton from '@/components/common/ProgressLine/ProgressLineItem/ProgressLineItem';
-import ProgressLineSkeleton from '@/components/common/ProgressLine/ProgressLineSkeleton/ProgressLineSkeleton';
-import { getClassNames } from '@/utils';
+import { getClassName } from '~utils/helpers';
 
 import { useProgressLine } from './hooks';
 import s from './ProgressLine.module.scss';
+import ProgressLineButton from './ProgressLineItem/ProgressLineItem';
+import ProgressLineSkeleton from './ProgressLineSkeleton/ProgressLineSkeleton';
 
 export interface ProgressProps {
   path: string;
@@ -22,8 +22,8 @@ interface ProgressLineProps {
 
 const ProgressLine: React.FC<ProgressLineProps> = ({ progress, className }) => {
   const progressItems = useProgressLine(progress);
-  const progressLineClassName = getClassNames(s.header, className);
-  const lineClassName = (currentOrPrevious: boolean) => getClassNames({
+  const progressLineClassName = getClassName(s.header, className);
+  const lineClassName = (currentOrPrevious: boolean) => getClassName({
     [s.line]: true,
     [s.previous]: currentOrPrevious,
   });

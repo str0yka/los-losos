@@ -3,17 +3,17 @@
 import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
 
-import Container from '@/components/common/Container/Container';
+import { Container } from '~ui';
 
 import s from './HomeHeader.module.scss';
 import { useSlider } from './hooks/useSlider';
 import ToCartButton from './ToCartButton/ToCartButton';
 
-interface MainPageHeaderProps {
-  categories: CategoryItem[];
+interface HomeHeaderProps {
+  categories: ProductGetAllResponse;
 }
 
-const MainPageHeader: React.FC<MainPageHeaderProps> = ({ categories }) => {
+export const HomeHeader: React.FC<HomeHeaderProps> = ({ categories }) => {
   const list = useSlider();
   const logo = useRef<null | HTMLImageElement>(null);
 
@@ -31,7 +31,7 @@ const MainPageHeader: React.FC<MainPageHeaderProps> = ({ categories }) => {
 
   return (
     <div className={s.headerWrapper}>
-      <Container>
+      <Container width="wide">
         <div className={s.header}>
           <Link
             href="/"
@@ -48,13 +48,16 @@ const MainPageHeader: React.FC<MainPageHeaderProps> = ({ categories }) => {
             {categories.map((category) => (
               <li // TODO: ul -> li -> button
                 key={category.title}
-                className={s.categoryItem}
-                onClick={() => window.scrollTo({
-                  top: document.getElementById(category.title)?.offsetTop,
-                  behavior: 'smooth',
-                })}
               >
-                {category.title}
+                <button
+                  className={s.categoryItem}
+                  onClick={() => window.scrollTo({
+                    top: document.getElementById(category.title)?.offsetTop,
+                    behavior: 'smooth',
+                  })}
+                >
+                  {category.title}
+                </button>
               </li>
             ))}
           </ul>
@@ -67,5 +70,3 @@ const MainPageHeader: React.FC<MainPageHeaderProps> = ({ categories }) => {
     </div>
   );
 };
-
-export default MainPageHeader;

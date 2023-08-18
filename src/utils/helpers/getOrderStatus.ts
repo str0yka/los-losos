@@ -1,5 +1,5 @@
 export const getOrderStatus = (
-  statusFromServer:
+  statusFromServer: // TODO: api types
     | 'accepted'
     | 'inWork'
     | 'enRoute'

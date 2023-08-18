@@ -2,7 +2,7 @@
 
 import React, { ComponentProps, forwardRef, useState } from 'react';
 
-import { getClassNames } from '@/utils';
+import { getClassName } from '~utils/helpers';
 
 import s from './Textarea.module.scss';
 
@@ -18,8 +18,8 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
      className, maxLength, resize, onChange, ...otherProps
    }, ref) => {
     const [value, setValue] = useState<string>('');
-    const labelClassName = getClassNames(s.label, className);
-    const textareaClassName = getClassNames(s.textarea, s[resize]);
+    const labelClassName = getClassName(s.label, className);
+    const textareaClassName = getClassName(s.textarea, s[resize]);
 
     return (
       <label className={labelClassName}>

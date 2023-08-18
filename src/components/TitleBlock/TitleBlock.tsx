@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import React from 'react';
 
-import ArrowButton from '@/components/common/ArrowButton/ArrowButton';
+import { ArrowButton } from '~ui';
 
 import s from './TitleBlock.module.scss';
 
@@ -10,23 +11,21 @@ interface TitleBlockProps {
   rightSide?: React.ReactNode;
 }
 
-const TitleBlock: React.FC<TitleBlockProps> = ({
+export const TitleBlock: React.FC<TitleBlockProps> = ({
   title,
   backTo,
   rightSide,
 }) => (
   <div className={s.titleBlock}>
     <div className={s.title}>
-      <ArrowButton
-        direction="left"
-        href={backTo}
-      />
+      <Link href={backTo}>
+        <ArrowButton
+          direction="left"
+          size="large"
+        />
+      </Link>
       <h1>{title}</h1>
     </div>
     {rightSide}
   </div>
 );
-
-TitleBlock.defaultProps = { rightSide: undefined };
-
-export default TitleBlock;

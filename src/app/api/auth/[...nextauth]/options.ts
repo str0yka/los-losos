@@ -1,7 +1,7 @@
 import type { NextAuthOptions } from 'next-auth';
 import CredentialProvider from 'next-auth/providers/credentials';
 
-import UserApi from '@/http/UserApi';
+import { userApi } from '~utils/api';
 
 export const options: NextAuthOptions = {
   providers: [
@@ -27,10 +27,17 @@ export const options: NextAuthOptions = {
           code: credentials?.code,
         };
 
-        const user = await UserApi.login(body);
+        const user = await userApi.login(body);
 
         if (user.id) {
-          return user;
+          return {
+            id: user.id,
+            addres: user.addres,
+            phone: user.phone,
+            cartId: user.cartId,
+            role: user.role,
+            accessToken: user.accessToken,
+          };
         }
 
         return null;

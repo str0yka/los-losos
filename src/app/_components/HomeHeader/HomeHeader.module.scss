@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
 
-  background-color: var(--secondaryColorTransparent);
+  background-color: #0d0d0d5b; // TODO: need variable
   backdrop-filter: blur(20px);
 
   z-index: var(--upperIndex);
@@ -47,7 +47,7 @@
         padding: 10px 15px;
 
         border-radius: 15px;
-        background-color: var(--secondaryColorLighten);
+        background-color: var(--color-neutral-2-700);
 
         cursor: pointer;
         user-select: none;
@@ -55,7 +55,7 @@
         transition: 0.2s ease color;
 
         &:hover {
-          color: var(--primaryColor);
+          color: var(--color-primary-500);
         }
       }
     }
@@ -94,7 +94,7 @@
         a {
           transition: all 0.2s ease;
           &:hover {
-            color: var(--primaryColor);
+            color: var(--color-primary-500);
           }
         }
 
@@ -109,7 +109,7 @@
           height: 18px;
           width: 2px;
 
-          background-color: var(--primaryColor);
+          background-color: var(--color-primary-500);
         }
       }
     }

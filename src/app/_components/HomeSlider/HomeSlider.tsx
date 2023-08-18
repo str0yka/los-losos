@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Slider from '@/components/common/Slider/Slider';
+import { Slider } from '~ui';
 
 import s from './HomeSlider.module.scss';
 
-const HomeSlider = () => {
+export const HomeSlider = () => {
   const items = [
     <h2 className={s.item}>
       чтобы
@@ -24,5 +24,3 @@ const HomeSlider = () => {
     <Slider items={items} />
   );
 };
-
-export default HomeSlider;

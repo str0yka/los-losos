@@ -1,17 +1,11 @@
 import React from 'react';
 
-import { getClassNames } from '@/utils';
+import { getClassName } from '~utils/helpers';
 
 import s from './Skeleton.module.scss';
 
-interface SkeletonProps {
-  className?: string;
-}
+interface SkeletonProps extends React.ComponentProps<'div'> {}
 
-const Skeleton: React.FC<SkeletonProps> = ({ className }) => {
-  const skeletonClassName = getClassNames(s.skeleton, className);
-
-  return <div className={skeletonClassName} />;
-};
-
-export default Skeleton;
+export const Skeleton: React.FC<SkeletonProps> = ({ className }) => (
+  <div className={getClassName(s.skeleton, className)} />
+);

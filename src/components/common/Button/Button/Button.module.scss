@@ -1,0 +1,75 @@
+.button {
+  font-weight: 500;
+
+  cursor: pointer;
+
+  &:disabled {
+    pointer-events: none;
+
+    background-color: var(--color-neutral-2-700);
+    border: var(--color-neutral-2-500) 1px solid;
+    color: var(--color-neutral-2-500);
+  }
+}
+
+.small {
+  padding: 10px 20px;
+}
+
+.medium {
+  padding: 13px 20px;
+}
+
+.large {
+  padding: 15px 20px;
+}
+
+.contained {
+  background-color: var(--color-primary-500);
+  color: var(--color-neutral-2-800);
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--color-primary-600);
+  }
+
+  &:active {
+    background-color: var(--color-primary-700);
+  }
+}
+
+.outlined {
+  border: var(--color-primary-500) 1px solid;
+  color: var(--color-primary-500);
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: var(--color-primary-600);
+    color: var(--color-primary-600);
+  }
+
+  &:active {
+    border-color: var(--color-primary-700);
+    color: var(--color-primary-700);
+  }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.rounded {
+  border-radius: 200px;
+}
+
+.square {
+  border-radius: 10px;
+}

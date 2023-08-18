@@ -1,8 +1,9 @@
 import React from 'react';
 
-import CountButton from '@/components/common/CountButton/CountButton';
-import DeleteFromCartButton from '@/components/DeleteFromCartButton/DeleteFromCartButton';
-import { API_URL, getClassNames } from '@/utils';
+import { DeleteFromCartButton } from '~components';
+import { CountButton } from '~ui';
+import { API_URL } from '~utils/consts';
+import { getClassName } from '~utils/helpers';
 
 import s from './ProductItem.module.scss';
 
@@ -13,13 +14,13 @@ interface ProductItemProps {
   countButton?: boolean
 }
 
-const ProductItem: React.FC<ProductItemProps> = ({
+export const ProductItem: React.FC<ProductItemProps> = ({
   product,
   size,
   removeButton = false,
   countButton = true,
 }) => {
-  const productClassName = getClassNames(s.product, s[size]);
+  const productClassName = getClassName(s.product, s[size]);
 
   return (
     <article className={productClassName}>
@@ -49,5 +50,3 @@ const ProductItem: React.FC<ProductItemProps> = ({
     </article>
   );
 };
-
-export default ProductItem;

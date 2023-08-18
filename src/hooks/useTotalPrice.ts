@@ -1,8 +1,7 @@
 import { useSelector } from 'react-redux';
 
-import { RootState } from '@/store';
-import { getTotalPrice } from '@/store/selectors/cartSelectors';
-import { DELIVERY_PRICE, PRICE_FOR_FREE_DELIVERY } from '@/utils';
+import { getTotalPrice, RootState } from '~store';
+import { DELIVERY_PRICE, PRICE_FOR_FREE_DELIVERY } from '~utils/consts';
 
 export const useTotalPrice = () => {
   const totalPrice = useSelector(getTotalPrice);

@@ -1,17 +1,23 @@
 'use client';
 
+import Link from 'next/link';
 import React from 'react';
 
-import Button from '@/components/common/Button/Button';
-import { useTotalCount } from '@/hooks/useTotalCount';
+import { useTotalCount } from '~hooks';
+import { Button } from '~ui';
 
 const ToCartButton = () => {
   const totalCount = useTotalCount();
 
   return (
-    <Button rounded variant="contained" href="/cart">
-      Корзина | {totalCount}
-    </Button>
+    <Link href="/cart">
+      <Button
+        rounded
+        variant="contained"
+      >
+        Корзина | {totalCount}
+      </Button>
+    </Link>
   );
 };
 

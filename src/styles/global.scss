@@ -1,4 +1,10 @@
-@import "zero";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  color: var(--color-neutral-1-200);
+}
 
 :root {
   --defaultIndex: 1;
@@ -8,55 +14,56 @@
 }
 
 body {
-  --primaryColor: #FADA5E;
-  --primaryColorLight: #FFF278;
-  --primaryColorHover: #FAD646;
-  --primaryColorGradient: linear-gradient(
-                  225deg,
-                  #FADA5E 0%,
-                  #C8A726 100%
-  );
-  --neutralColor: #FFFFFF;
-  --neutralColorTransparent: rgba(255, 255, 255, 0.05);
-  --neutralColorDarken: #CCCCCC;
-  --secondaryColorLight: #373737;
-  --secondaryColorLighten: #171717;
-  --secondaryColorTransparent: #0E0E0E99;
-  --secondaryColorSkeleton: rgba(14, 14, 14, 0.35);
-  --secondaryColorBright: #111111;
-  --secondaryColor: #0E0E0E;
+  --color-neutral-1-100: #FFFFFF;
+  --color-neutral-1-200: #F2F2F2;
+  --color-neutral-1-300: #E6E6E6;
+  --color-neutral-1-400: #D9D9D9;
+  --color-neutral-1-500: #CCCCCC;
+  --color-neutral-1-600: #BFBFBF;
+  --color-neutral-1-700: #B3B3B3;
+  --color-neutral-1-800: #A6A6A6;
+  --color-neutral-1-900: #999999;
+
+  --color-neutral-2-100: #666666;
+  --color-neutral-2-200: #595959;
+  --color-neutral-2-300: #4D4D4D;
+  --color-neutral-2-400: #404040;
+  --color-neutral-2-500: #333333;
+  --color-neutral-2-600: #262626;
+  --color-neutral-2-700: #1A1A1A;
+  --color-neutral-2-750: #111111;
+  --color-neutral-2-800: #0D0D0D;
+  --color-neutral-2-900: #000000;
+  
+  --color-primary-100: #FDF0BF;
+  --color-primary-200: #FCEBA6;
+  --color-primary-300: #FBE58D;
+  --color-primary-400: #FBDF75;
+  --color-primary-500: #FADA5E;
+  --color-primary-600: #F9D443;
+  --color-primary-700: #F8CE2A;
+  --color-primary-800: #F8C812;
+  --color-primary-900: #E8BA07;
+
+  --color-warning-100: #FFB2B2;
+  --color-warning-200: #FF9999;
+  --color-warning-300: #FF8080;
+  --color-warning-400: #FF6666;
+  --color-warning-500: #FF4B4B;
+  --color-warning-600: #FF3333;
+  --color-warning-700: #FF1A1A;
+  --color-warning-800: #FF0000;
+  --color-warning-900: #E50000;
 
   display: flex;
   flex-direction: column;
 
   min-height: 100vh;
 
-  background-color: var(--secondaryColor);
+  background-color: var(--color-neutral-2-800);
 }
 
 .main {
   position: relative;
   flex-grow: 1;
-}
-
-// body {
-//   --primaryColor: #5efa6b;
-//   --primaryColorHover: #50f85e;
-//   --neutralColor: #000000;
-//   --neutralColorTransparent: rgba(255, 255, 255, 0.05);
-//   --neutralColorDarken: #2e2e2e;
-//   --secondaryColorLight: #aaaaaa;
-//   --secondaryColorLighten: #e6e6e6;
-//   --secondaryColorTransparent: #dddddd99;
-//   --secondaryColor: #dddddd;
-
-//   background-color: var(--secondaryColor);
-// }
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
-  color: var(--neutralColor);
 }

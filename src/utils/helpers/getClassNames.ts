@@ -1,12 +1,10 @@
-type getClassNamesProps = Array<
-  | {
-  [key: string]: boolean;
-}
-  | string
-  | undefined
+type GetClassNameParams = Array<
+| Record<string, boolean>
+| string
+| undefined
 >;
 
-export const getClassNames = (...classNames: getClassNamesProps) => {
+export const getClassName = (...classNames: GetClassNameParams) => {
   const result: string[] = [];
 
   for (let i = 0; i < classNames.length; i++) {
@@ -14,7 +12,9 @@ export const getClassNames = (...classNames: getClassNamesProps) => {
 
     if (typeof currentClassName === 'object') {
       for (const className in currentClassName) {
-        currentClassName[className] && result.push(className);
+        if (currentClassName[className]) {
+          result.push(className);
+        }
       }
     }
 

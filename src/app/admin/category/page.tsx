@@ -3,13 +3,11 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import Button from '@/components/common/Button/Button';
-import Input from '@/components/common/Input/Input';
-import TitleBlock from '@/components/TitleBlock/TitleBlock';
-import { useAccessToken } from '@/hooks/useAccessToken';
-import { useRequest } from '@/hooks/useRequest';
-import CategoryApi from '@/http/CategoryApi';
-import { getClassNames } from '@/utils';
+import { Button, Input } from '~ui';
+import { TitleBlock } from '~components';
+import { useAccessToken, useRequest } from '~hooks';
+import { categoryApi } from '~utils/api';
+import { getClassName } from '~utils/helpers';
 
 import s from './page.module.scss';
 
@@ -75,7 +73,6 @@ const AdminCategoryPage = () => {
           />
           <Button
             variant="contained"
-            textVariant="capitalize-first-latter"
           >
             Создать
           </Button>
@@ -84,7 +81,7 @@ const AdminCategoryPage = () => {
       <div className={s.categoryDeleteBlock}>
         <p>Удалить категорию</p>
         <ul className={s.categoryList}>
-          <li className={getClassNames(s.categoryListItem, s.categoryListTitleBlock)}>
+          <li className={getClassName(s.categoryListItem, s.categoryListTitleBlock)}>
             <span>Наименование категории</span>
           </li>
           {isLoading && (

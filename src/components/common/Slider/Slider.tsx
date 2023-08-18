@@ -2,9 +2,9 @@
 
 import React, { useRef } from 'react';
 
-import ArrowButton from '@/components/common/ArrowButton/ArrowButton';
-import { getClassNames } from '@/utils';
+import { getClassName } from '~utils/helpers';
 
+import { ArrowButton } from '../Button/ArrowButton/ArrowButton';
 import s from './Slider.module.scss';
 
 interface SliderProps {
@@ -12,8 +12,8 @@ interface SliderProps {
   items: React.ReactNode[]
 }
 
-const Slider: React.FC<SliderProps> = ({ className, items }) => {
-  const sliderRef = useRef<null | HTMLDivElement>(null);
+export const Slider: React.FC<SliderProps> = ({ className, items }) => {
+  const sliderRef = useRef<HTMLDivElement>(null);
 
   const slide = (direction: 'back' | 'forward') => {
     if (!sliderRef.current) throw new Error('sliderRef unannounced');
@@ -29,15 +29,17 @@ const Slider: React.FC<SliderProps> = ({ className, items }) => {
   };
 
   return (
-    <div className={getClassNames(s.sliderContainer, className)}>
+    <div className={getClassName(s.sliderContainer, className)}>
       <ArrowButton
+        size="large"
         direction="left"
-        className={getClassNames(s.arrowButton, s.leftButton)}
+        className={getClassName(s.arrowButton, s.leftButton)}
         onClick={() => slide('back')}
       />
       <ArrowButton
+        size="large"
         direction="right"
-        className={getClassNames(s.arrowButton, s.rightButton)}
+        className={getClassName(s.arrowButton, s.rightButton)}
         onClick={() => slide('forward')}
       />
       <div
@@ -56,5 +58,3 @@ const Slider: React.FC<SliderProps> = ({ className, items }) => {
     </div>
   );
 };
-
-export default Slider;

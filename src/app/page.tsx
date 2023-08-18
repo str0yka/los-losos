@@ -1,36 +1,34 @@
 import { Metadata } from 'next';
 import React from 'react';
 
-import CategoryList from '@/app/_components/CategoryList/CategoryList';
-import HomeHeader from '@/app/_components/HomeHeader/HomeHeader';
-import HomeSlider from '@/app/_components/HomeSlider/HomeSlider';
-import Container from '@/components/common/Container/Container';
-import { API_URL } from '@/utils/consts';
+import { Container } from '~ui';
+import { productApi } from '~utils/api';
+
+import { CategoryList, HomeHeader, HomeSlider } from './_components';
 
 export const metadata: Metadata = {
   title: 'Доставка | Лось-Лосось',
 };
 
-const getCategories = async () => {
-  const response = await fetch(`${API_URL}/product`, {
-    method: 'GET',
-    next: {
-      revalidate: 60,
-    },
-  });
+const getCategories = async (): Promise<[ProductGetAllResponse, string]> => {
+  let categories: ProductGetAllResponse = [];
+  let errorMessage = '';
+  try {
+    categories = await productApi.getAll();
+  } catch (error: any) {
+    errorMessage = error?.message ?? 'Ошибка при получение продуктов';
+  }
 
-  return response.json();
+  return [categories, errorMessage];
 };
 
 const Home = async () => {
-  const categories: CategoryItem[] | unknown = await getCategories();
-
+  const [categories] = await getCategories();
   if (!Array.isArray(categories)) return <h1>error</h1>;
-
   return (
     <>
       <HomeHeader categories={categories} />
-      <Container>
+      <Container width="wide">
         <HomeSlider />
         {categories.map((category) => (
           <CategoryList key={category.title} category={category} />
@@ -39,5 +37,4 @@ const Home = async () => {
     </>
   );
 };
-
 export default Home;
