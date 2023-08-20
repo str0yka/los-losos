@@ -1,0 +1,20 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.progressLine {
+  flex-grow: 1;
+
+  height: 2px;
+
+  border: 1px var(--color-neutral-2-500) dashed;
+}
+
+.skeleton {
+  height: 40px;
+  width: 100px;
+}

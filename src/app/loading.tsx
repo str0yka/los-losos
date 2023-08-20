@@ -1,7 +1,11 @@
 import React from 'react';
 
-import Loading from '@/components/common/Loading/Loading';
+import { Loading } from '~components';
 
-const LoadingPage = () => <Loading />;
+const LoadingPage = () => (
+  <main>
+    <Loading />
+  </main>
+);
 
 export default LoadingPage;

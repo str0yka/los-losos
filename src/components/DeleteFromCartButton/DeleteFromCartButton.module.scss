@@ -2,13 +2,19 @@
   cursor: pointer;
 
   path {
-    fill: var(--secondaryColorLight);
+    fill: var(--color-neutral-2-700);
     transition: fill .2s ease;
   }
 
   &:hover {
     path {
-      fill: var(--primaryColor);
+      fill: var(--color-primary-500);
+    }
+  }
+
+  &:active {
+    path {
+      fill: var(--color-primary-700);
     }
   }
 }

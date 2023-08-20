@@ -1,17 +1,20 @@
 import React from 'react';
 
-import OrderingProgressLine from '@/app/(ordering)/_components/OrderingProgressLine/OrderingProgressLine';
-import Container from '@/components/common/Container/Container';
+import { Container } from '~ui';
+
+import { OrderingProgressLine } from './_sections';
 
 interface OrderingLayoutProps {
   children: React.ReactNode
 }
 
 const OrderingLayout: React.FC<OrderingLayoutProps> = ({ children }) => (
-  <Container width="medium">
-    <OrderingProgressLine />
+  <>
+    <Container width="medium">
+      <OrderingProgressLine />
+    </Container>
     {children}
-  </Container>
+  </>
 );
 
 export default OrderingLayout;

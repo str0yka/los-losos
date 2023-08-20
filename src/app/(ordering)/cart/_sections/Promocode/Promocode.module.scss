@@ -1,0 +1,59 @@
+.promocode {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  padding: 15px;
+
+  border-radius: 10px;
+  border: 1px var(--color-neutral-2-700) solid;
+}
+
+.promocodeAction {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 15px;
+
+  label {
+    flex-grow: 1;
+  }
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.promocodeInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.promocodeTitle {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.promocodeSubtitle {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-neutral-2-200)
+}
+
+@media (min-width: 480px) {
+  .promocode {
+    width: 75%;
+  }
+
+  .promocodeAction {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .promocode {
+    width: 50%;
+  }
+}

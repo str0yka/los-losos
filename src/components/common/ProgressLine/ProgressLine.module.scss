@@ -1,4 +1,6 @@
-.header {
+.progressLine {
+  width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,9 +13,9 @@
 
   height: 2px;
 
-  border: 1px var(--secondaryColorLight) dashed;
+  border: 1px var(--color-neutral-2-500) dashed;
 
   &.previous {
-    border: 1px var(--primaryColor) dashed;
+    border: 1px var(--color-primary-500) dashed;
   }
 }

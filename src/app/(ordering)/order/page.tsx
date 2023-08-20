@@ -1,8 +1,6 @@
 import React from 'react';
 
-import Check from '@/app/(ordering)/order/_components/Check/Check';
-import OrderForm from '@/app/(ordering)/order/_components/OrderForm/OrderForm';
-
+import { Check, OrderForm } from './_sections';
 import s from './page.module.scss';
 
 const Order = () => (

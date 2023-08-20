@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
 import React from 'react';
 
-import Container from '@/components/common/Container/Container';
-import TitleBlock from '@/components/TitleBlock/TitleBlock';
+import { TitleBlock } from '~components';
+import { Container } from '~ui';
 
 export const metadata: Metadata = {
   title: 'Профиль | Лось-Лосось',

@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import React from 'react';
 
-import DeleteFromCartButton from '@/components/DeleteFromCartButton/DeleteFromCartButton';
-import TitleBlock from '@/components/TitleBlock/TitleBlock';
+import { Container, DeleteFromCartButton, TitleBlock } from '~components';
 
 export const metadata: Metadata = {
   title: 'Корзина | Лось-Лосось',
@@ -13,14 +12,16 @@ interface CartLayoutProps {
 }
 
 const CartLayout: React.FC<CartLayoutProps> = ({ children }) => (
-  <>
-    <TitleBlock
-      title="Корзина"
-      backTo="/"
-      rightSide={<DeleteFromCartButton />}
-    />
-    {children}
-  </>
+  <main>
+    <Container width="narrow">
+      <TitleBlock
+        title="Корзина"
+        backTo="/"
+        rightSide={<DeleteFromCartButton />}
+      />
+      {children}
+    </Container>
+  </main>
 );
 
 export default CartLayout;

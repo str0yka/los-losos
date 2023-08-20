@@ -3,12 +3,11 @@
 import { useSession } from 'next-auth/react';
 import React from 'react';
 
-import OrderItem from '@/app/profile/_components/OrderItem/OrderItem';
-import Skeleton from '@/components/common/Skeleton/Skeleton';
-import { useAccessToken } from '@/hooks/useAccessToken';
-import { useRequest } from '@/hooks/useRequest';
-import CartApi from '@/http/CartApi';
+import { useAccessToken, useRequest } from '~hooks';
+import { Skeleton } from '~ui';
+import { orderApi } from '~utils/api';
 
+import { OrderItem } from './_sections';
 import s from './page.module.scss';
 
 const ProfilePage = () => {
@@ -18,11 +17,12 @@ const ProfilePage = () => {
     orders,
     isLoading,
     isError,
-  ] = useRequest<Order[]>(
-    () => CartApi.getOrders(accessToken),
+  ] = useRequest<OrderGetAllResponse>(
+    () => orderApi.getAll(accessToken),
     {
       dependencies: [status],
       verification: status === 'authenticated',
+      defaultValue: [],
     },
   );
 

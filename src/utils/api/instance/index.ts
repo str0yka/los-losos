@@ -24,11 +24,12 @@ export class API {
   }
 
   async request<T>(url: string, init?: ApiRequestInit): Promise<T> {
-    const headersInit = this.json ? { 'Content-Type': 'application-json' } : undefined;
+    const headersInit = this.json ? { 'Content-Type': 'application/json' } : undefined;
     const bodyInit = this.json ? JSON.stringify(init?.body) : init?.body;
 
     const response = await fetch(this.baseURL + url, {
       ...this.baseInit,
+      ...init,
       headers: {
         ...init?.headers,
         ...headersInit,

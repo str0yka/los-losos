@@ -2,9 +2,9 @@
 
 import React from 'react';
 
+import { VisuallyHidden } from '~ui/VisuallyHidden/VisuallyHidden';
 import { getClassName } from '~utils/helpers';
 
-import { VisuallyHidden } from '../../VisuallyHidden/VisuallyHidden';
 import s from './CountButton.module.scss';
 import { useHandleCart } from './hooks';
 

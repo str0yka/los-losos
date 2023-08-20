@@ -22,6 +22,8 @@
     "paths": {
       "~components": ["./src/components"],
       "~ui": ["./src/components/common"],
+      "~ui/*": ["./src/components/common/*"],
+      "~ui/icons": ["./src/components/common/icons"],
       "~store": ["./src/store"],
       "~hooks": ["./src/hooks"],
       "~utils/helpers": ["./src/utils/helpers"],

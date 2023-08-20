@@ -74,7 +74,7 @@ class CartApi {
   }
 
   async confirm(body: CartConfirmRequest, accessToken: string) {
-    const response = await this.cartApi.post<ApiResponse<CartConfirmResponse>>('/', {
+    const response = await this.cartApi.post<ApiResponse<CartConfirmResponse>>('/confirm', {
       headers: { authorization: accessToken },
       body,
     });

@@ -1,25 +1,24 @@
-div.skeletonButton {
-  height: 36px;
-
-  background-color: var(--secondaryColorTransparent);
-}
-
 .active {
-  height: 108px;
+  height: calc(var(--count-button-square-side) * 3);
 }
 
 .nonactive {
-  height: 36px;
+  height: var(--count-button-square-side);
 }
 
 .countButton {
+  --count-button-border-radius: 5px;
+  --count-button-square-side: 28px;
+  --count-button-line-width: 6px;
+  --count-button-line-height: 1px;
+
   position: relative;
 
-  width: 36px;
-  height: 36px;
+  width: var(--count-button-square-side);
+  height: var(--count-button-square-side);
 
-  border: 1px solid var(--secondaryColorLight);
-  border-radius: 10px;
+  border: 1px solid var(--color-neutral-2-500);
+  border-radius: var(--count-button-border-radius);
 
   cursor: pointer;
 
@@ -37,11 +36,11 @@ div.skeletonButton {
     top: 50%;
     left: 50%;
 
-    width: 10px;
-    height: 2px;
+    width: var(--count-button-line-width);
+    height: var(--count-button-line-height);
 
     border-radius: 1px;
-    background: var(--secondaryColorLight);
+    background: var(--color-neutral-2-500);
   }
 
   &::after {
@@ -53,17 +52,17 @@ div.skeletonButton {
   }
 
   &:hover {
-    border: 1px solid var(--secondaryColorLight);
+    border: 1px solid var(--color-neutral-2-300);
 
     &::after,
     &::before {
-      background: var(--secondaryColorLight);
+      background: var(--color-neutral-2-300);
     }
   }
 
   &.active {
     display: flex;
-    width: 108px;
+    width: calc(var(--count-button-square-side) * 3);
     border: none;
 
     &::after,
@@ -79,16 +78,16 @@ div.skeletonButton {
       display: block;
       width: calc(100% / 3);
 
-      background: var(--primaryColor);
+      background: var(--color-primary-500);
 
       font-size: 0.75rem;
       font-weight: 600;
-      color: var(--secondaryColor);
+      color: var(--color-neutral-2-800);
 
       user-select: none;
 
       &:hover {
-        background: var(--primaryColorHover);
+        background: var(--color-primary-600);
       }
 
       &::after,
@@ -97,11 +96,11 @@ div.skeletonButton {
         top: 50%;
         left: 50%;
 
-        width: 10px;
-        height: 2px;
+        width: var(--count-button-line-width);
+        height: var(--count-button-line-height);
 
         border-radius: 1px;
-        background: var(--secondaryColor);
+        background: var(--color-neutral-2-800);
       }
 
       &:first-child {
@@ -121,7 +120,7 @@ div.skeletonButton {
         justify-content: center;
 
         &:hover {
-          background: var(--primaryColor);
+          background: var(--color-primary-500);
         }
       }
 
@@ -149,9 +148,9 @@ div.skeletonButton {
     pointer-events: none;
     animation: disabled 1s ease infinite;
 
-    background-color: var(--neutralColorTransparent);
+    background-color: var(--color-neutral-2-700);
     div {
-      background-color: var(--neutralColorTransparent);
+      background-color: var(--color-neutral-2-700);
     }
   }
 }
@@ -167,5 +166,22 @@ div.skeletonButton {
 
   100% {
     opacity: 0.75;
+  }
+}
+
+@media (min-width: 480px) {
+  .countButton {
+    --count-button-border-radius: 7px;
+    --count-button-square-side: 32px;
+    --count-button-line-width: 8px;
+    --count-button-line-height: 2px;
+  }
+}
+
+@media (min-width: 960px) {
+  .countButton {
+    --count-button-square-side: 36px;
+    --count-button-line-width: 10px;
+    --count-button-line-height: 2px;
   }
 }

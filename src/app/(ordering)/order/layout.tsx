@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import React from 'react';
 
-import TitleBlock from '@/components/TitleBlock/TitleBlock';
+import { TitleBlock } from '~components';
 
 export const metadata: Metadata = {
   title: 'Оформление заказа | Лось-Лосось',

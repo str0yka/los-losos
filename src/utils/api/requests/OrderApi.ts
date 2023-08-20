@@ -11,7 +11,7 @@ class OrderApi {
   }
 
   async getAll(accessToken: string) {
-    const response = await this.orderApi.get<ApiResponse<OrderGetAllResponse>>('/', {
+    const response = await this.orderApi.get<ApiResponse<OrderGetAllResponse>>('/orders', {
       headers: { authorization: accessToken },
     });
 

@@ -1,0 +1,40 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+
+  margin-top: 15px;
+  padding: 15px 0;
+
+  border-top: 1px var(--color-neutral-2-700) solid;
+}
+
+.logo {
+  height: 15px;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+}
+
+.social {
+
+  svg {
+    path {
+      fill: var(--color-neutral-2-700);
+
+      transition: fill .2s ease;
+    }
+  }
+
+  &:hover {
+    svg {
+      path {
+        fill: var(--color-neutral-2-500);
+      }
+    }
+  }
+}

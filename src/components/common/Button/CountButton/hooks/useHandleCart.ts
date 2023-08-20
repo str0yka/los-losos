@@ -12,7 +12,6 @@ export const useHandleCart = (productId: number) => {
     productInCart.product.id === productId
   ))?.count ?? 0;
   const accessToken = useAccessToken();
-
   const handleCart = async (action: 'add' | 'delete') => {
     try {
       setIsLoading(true);

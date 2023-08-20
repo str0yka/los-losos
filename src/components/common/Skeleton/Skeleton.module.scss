@@ -1,7 +1,7 @@
 .skeleton {
   position: relative;
 
-  background-color: var(--secondaryColorLighten);
+  background-color: var(--color-neutral-2-750);
   border-radius: 10px;
 
   overflow: hidden;
@@ -19,7 +19,12 @@
     width: 100%;
     height: 100%;
 
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, var(--secondaryColorSkeleton) 25%, var(--secondaryColorSkeleton) 75%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(
+      90deg,
+      var(--color-neutral-2-750) 0%,
+      var(--color-neutral-2-800) 50%,
+      var(--color-neutral-2-750) 100%,
+    );
     animation: skeletonAnimate 1.5s infinite;
   }
 }

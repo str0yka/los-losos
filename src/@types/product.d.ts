@@ -5,7 +5,6 @@ type Product = {
   foods: string;
   price: number;
   weight: number;
-  category: Category;
   categoryId: number;
 };
 
@@ -18,17 +17,17 @@ type ProductCreateRequest = {
   categoryId: number;
 };
 
-type ProductCreateResponse = Omit<Product, 'category'>;
+type ProductCreateResponse = Product;
 
-type ProductGetOneResponse = Omit<Product, 'category'>;
+type ProductGetOneResponse = Product;
 
 type ProductGetAllResponse = Array<{
   title: string;
-  products: Omit<Product, 'category'>[];
+  products: Product[];
 }>;
 
 type ProductDeleteRequest = {
   id: number;
 };
 
-type ProductDeleteResponse = Omit<Product, 'category'>;
+type ProductDeleteResponse = Product;

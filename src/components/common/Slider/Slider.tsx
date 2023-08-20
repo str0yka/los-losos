@@ -29,7 +29,7 @@ export const Slider: React.FC<SliderProps> = ({ className, items }) => {
   };
 
   return (
-    <div className={getClassName(s.sliderContainer, className)}>
+    <section className={getClassName(s.sliderContainer, className)}>
       <ArrowButton
         size="large"
         direction="left"
@@ -55,6 +55,6 @@ export const Slider: React.FC<SliderProps> = ({ className, items }) => {
           </div>
           ))}
       </div>
-    </div>
+    </section>
   );
 };

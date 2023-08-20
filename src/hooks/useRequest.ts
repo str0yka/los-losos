@@ -2,31 +2,33 @@ import {
  Dispatch, SetStateAction, useEffect, useState,
 } from 'react';
 
-interface RequestOptions {
-  dependencies: any[],
-  verification: boolean
+interface RequestOptions<T> {
+  dependencies?: any[];
+  verification?: boolean;
+  defaultValue: T
 }
 
 export const useRequest = <T>(
-  request: () => any,
-  options: RequestOptions = {
-    dependencies: [],
-    verification: true,
-  },
+  request: () => Promise<T>,
+  {
+    dependencies = [],
+    verification = true,
+    defaultValue,
+  }: RequestOptions<T>,
 ): [null | T, boolean, string, Dispatch<SetStateAction<T | null>>] => {
-  const [data, setData] = useState<null | T>(null);
+  const [data, setData] = useState<null | T>(defaultValue);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
 
   useEffect(() => {
     setLoading(true);
-    if (options.verification) {
+    if (verification) {
       request()
         .then((response: T) => setData(response))
         .catch((responseError: any) => setError(responseError))
         .finally(() => setLoading(false));
     }
-  }, options.dependencies);
+  }, dependencies);
 
   return [data, loading, error, setData];
 };

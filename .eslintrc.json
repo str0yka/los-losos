@@ -44,6 +44,7 @@
     "react/button-has-type": "off",
     "react/jsx-props-no-spreading": "off",
     "no-restricted-syntax": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   }
 }

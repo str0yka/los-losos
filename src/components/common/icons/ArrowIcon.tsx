@@ -1,7 +1,10 @@
 import React from 'react';
 
-export const ArrowIcon: React.FC<React.ComponentProps<'svg'>> = () => (
+interface ArrowIconProps extends React.ComponentProps<'svg'> {}
+
+export const ArrowIcon: React.FC<ArrowIconProps> = ({ ...svgProps }) => (
   <svg
+    {...svgProps}
     width="14"
     height="16"
     viewBox="0 0 14 16"

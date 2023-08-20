@@ -14,7 +14,7 @@
     align-self: flex-end;
     height: 2px;
 
-    border: 1px var(--secondaryColorLight) dashed;
+    border: 1px var(--color-neutral-2-700) dashed;
   }
 }
 
@@ -24,17 +24,20 @@
 
 .confirmButton {
   position: relative;
+  width: 100%;
 
   svg {
     position: absolute;
     right: calc(50% - 100px);
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) rotate(180deg);
+
+    width: 8px;
 
     transition: right .2s ease;
 
     path {
-      fill: var(--secondaryColor);
+      fill: var(--color-neutral-2-800);
     }
   }
 
@@ -45,12 +48,30 @@
   }
 }
 
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 15px 0;
+
+  border-radius: 5px;
+  background-color: var(--color-primary-500);
+}
+
+.text {
+  color: var(--color-neutral-2-800)
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(144px, 1fr);
+  gap: 20px;
+}
+
 @media (min-width: 1280px) {
   .cart {
     gap: 35px;
-  }
-
-  .title {
-    gap: 30px;
   }
 }

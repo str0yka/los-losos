@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 import React from 'react';
 
-import { Container } from '~ui';
+import { Container, Typography } from '~ui';
 import { productApi } from '~utils/api';
 
-import { CategoryList, HomeHeader, HomeSlider } from './_components';
+import { HomeHeader, HomeSlider, ProductList } from './_sections';
 
 export const metadata: Metadata = {
   title: 'Доставка | Лось-Лосось',
@@ -23,18 +23,26 @@ const getCategories = async (): Promise<[ProductGetAllResponse, string]> => {
 };
 
 const Home = async () => {
-  const [categories] = await getCategories();
-  if (!Array.isArray(categories)) return <h1>error</h1>;
+  const [categories, errorMessage] = await getCategories();
   return (
-    <>
+    <main>
       <HomeHeader categories={categories} />
       <Container width="wide">
         <HomeSlider />
+        {errorMessage && (
+          <Typography component="p">
+            {errorMessage}
+          </Typography>
+        )}
         {categories.map((category) => (
-          <CategoryList key={category.title} category={category} />
+          <ProductList
+            key={category.title}
+            title={category.title}
+            products={category.products}
+          />
         ))}
       </Container>
-    </>
+    </main>
   );
 };
 export default Home;

@@ -4,17 +4,18 @@ import '~styles/zero.scss';
 import { Metadata } from 'next';
 import React from 'react';
 
-import { AuthProvider, Header, StoreProvider } from '~components';
+import {
+  AuthProvider,
+  Footer,
+  Header,
+  StoreProvider,
+} from '~components';
 import { museoSans } from '~fonts';
 
 export const metadata: Metadata = {
   title: 'Лось-Лосось',
   description: 'Караоке-гастропаб',
 };
-
-interface RootLayoutInterface {
-  children: React.ReactNode;
-}
 
 // TODO:
 // 4. Кастомная страница авторизации
@@ -29,24 +30,28 @@ interface RootLayoutInterface {
 // 33. Reselect
 // 35. Структура компонентов
 // 36. Обработать случай, когда промокод не верный
-// 37. Страница профиля
-// 38. Переписать все запросы на axios + типизация ответов
 // 39. AdminProvider
 // 40. page.tsx компоненты переименовать в ...Page
-// 41. Типизация fetch
-// 42. Типизация useRequest
-// 43. fetchJSON и fetchFormData
+// 44. main у page.tsx
+
+interface RootLayoutInterface {
+  children: React.ReactNode;
+}
 
 const RootLayout: React.FC<RootLayoutInterface> = ({ children }) => (
-  <html lang="ru" className={museoSans.className}>
-    <body>
-      <AuthProvider>
-        <StoreProvider>
+  <html
+    lang="ru"
+    className={museoSans.className}
+  >
+    <AuthProvider>
+      <StoreProvider>
+        <body>
           <Header />
-          <main className="main">{children}</main>
-        </StoreProvider>
-      </AuthProvider>
-    </body>
+          {children}
+          <Footer />
+        </body>
+      </StoreProvider>
+    </AuthProvider>
   </html>
 );
 

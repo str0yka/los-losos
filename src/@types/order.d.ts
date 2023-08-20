@@ -12,15 +12,15 @@ type Order = {
   userId?: number;
 };
 
-type OrderGetAllResponse = {
+type OrderGetAllResponse = Array<{
   status: Order['status'];
   cart: {
     id: number;
     productsInCart: Array<{
-      products: {
+      product: {
         title: string;
       };
       count: number;
     }>
   }
-};
+}>;

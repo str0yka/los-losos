@@ -5,17 +5,17 @@
   padding: 10px;
 
   border-radius: 10px;
-  border: 1px var(--secondaryColorLighten) solid;
+  border: 1px var(--color-neutral-2-500) solid;
 
   font-size: 14px;
-  color: var(--neutralColorDarken);
+  color: var(--color-neutral-2-500);
 
   cursor: text;
 
   &:focus-within {
-    border: 1px var(--secondaryColorLight) solid;
+    border: 1px var(--color-neutral-2-300) solid;
 
-    color: var(--neutralColor);
+    color: var(--color-neutral-2-300);
   }
 }
 

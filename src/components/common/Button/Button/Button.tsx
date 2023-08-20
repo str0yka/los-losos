@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Skeleton } from '~ui';
+import { Skeleton } from '~ui/Skeleton/Skeleton';
 import { getClassName } from '~utils/helpers';
 
 import s from './Button.module.scss';
 
-interface ButtonProps extends React.ComponentProps<'button'> {
+export interface ButtonProps extends React.ComponentProps<'button'> {
   variant?: 'contained' | 'outlined';
   textVariant?:
     | 'uppercase'
