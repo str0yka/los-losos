@@ -3,9 +3,10 @@
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { useSelector } from 'react-redux';
 
 import { useAccessToken, useAppDispatch } from '~hooks';
-import { fetchConfirmOrder } from '~store';
+import { fetchConfirmOrder, getCart } from '~store';
 import { Button, Input, Textarea } from '~ui';
 
 import s from './OrderForm.module.scss';
@@ -13,8 +14,13 @@ import s from './OrderForm.module.scss';
 export const OrderForm = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
+  const { status } = useSelector(getCart);
   const accessToken = useAccessToken();
-  const { register, handleSubmit, formState: { isSubmitting } } = useForm<CartConfirmRequest>({
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<CartConfirmRequest>({
     defaultValues: {
       name: '',
       phone: '',
@@ -80,33 +86,26 @@ export const OrderForm = () => {
               </li>
               <li>
                 <span>Строение</span>
-                <Input
-                  {...register('building')}
-                />
+                <Input {...register('building')} />
               </li>
               <li>
                 <span>Подъезд</span>
-                <Input
-                  {...register('entrance')}
-                />
+                <Input {...register('entrance')} />
               </li>
               <li>
                 <span>Этаж</span>
-                <Input
-                  {...register('floor')}
-                />
+                <Input {...register('floor')} />
               </li>
               <li>
                 <span>Квартира</span>
-                <Input
-                  {...register('apartment')}
-                />
+                <Input {...register('apartment')} />
               </li>
               <li className={s.addressTextareaBlock}>
                 <span>Комментарий к адресу</span>
                 <Textarea
-                  {...register('addressComment')}
+                  {...register('addressComment', { maxLength: 300 })}
                   className={s.textarea}
+                  maxLength={300}
                   resize="noResize"
                   placeholder="Укажите код домофона или другую, важную для курьера, информацию"
                 />
@@ -117,9 +116,10 @@ export const OrderForm = () => {
             <span>Комментарий к заказу &#129300;</span>
             <Textarea
               {...register('orderComment', { maxLength: 300 })}
-              placeholder="Напишите тут то, что считаете важным"
-              resize="noResize"
               className={s.textarea}
+              maxLength={300}
+              resize="noResize"
+              placeholder="Напишите тут то, что считаете важным"
             />
           </li>
         </ul>
@@ -128,7 +128,7 @@ export const OrderForm = () => {
           variant="contained"
           size="large"
           type="submit"
-          disabled={isSubmitting}
+          disabled={isSubmitting || status === 'loading/all'}
         >
           Оформить заказ
           <svg

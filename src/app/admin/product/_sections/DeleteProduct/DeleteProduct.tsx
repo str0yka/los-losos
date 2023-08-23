@@ -2,19 +2,21 @@
 
 import React from 'react';
 
-import { useAccessToken } from '@/hooks/useAccessToken';
-import { useRequest } from '@/hooks/useRequest';
-import ProductApi from '@/http/ProductApi';
+import { useAccessToken, useRequest } from '~hooks';
+import { productApi } from '~utils/api';
 
 import s from './DeleteProduct.module.scss';
 
-const DeleteProduct = () => {
+export const DeleteProduct = () => {
   const accessToken = useAccessToken();
-  const [categories] = useRequest<CategoryItem[]>(() => ProductApi.getAll());
+  const [categories] = useRequest({
+    request: () => productApi.getAll(),
+    defaultValue: [],
+  });
 
   const onDeleteProduct = async (id: number) => {
     try {
-      await ProductApi.delete(id, accessToken);
+      await productApi.delete({ id }, accessToken);
       alert('Продукт удален');
     } catch (error) {
       alert('Ошибка при удалении продукта');
@@ -47,5 +49,3 @@ const DeleteProduct = () => {
     </div>
   );
 };
-
-export default DeleteProduct;

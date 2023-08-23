@@ -2,21 +2,22 @@ import {
  Dispatch, SetStateAction, useEffect, useState,
 } from 'react';
 
-interface RequestOptions<T> {
+interface RequestOptions<T, K> {
+  request: () => Promise<T>
   dependencies?: any[];
   verification?: boolean;
-  defaultValue: T
+  defaultValue: K
 }
 
-export const useRequest = <T>(
-  request: () => Promise<T>,
+export const useRequest = <T, K>(
   {
+    request,
     dependencies = [],
     verification = true,
     defaultValue,
-  }: RequestOptions<T>,
-): [null | T, boolean, string, Dispatch<SetStateAction<T | null>>] => {
-  const [data, setData] = useState<null | T>(defaultValue);
+  }: RequestOptions<T, K>,
+): [T | K, boolean, string, Dispatch<SetStateAction<T | K>>] => {
+  const [data, setData] = useState<T | K>(defaultValue);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>('');
 

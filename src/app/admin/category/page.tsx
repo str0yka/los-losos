@@ -3,9 +3,9 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-import { Button, Input } from '~ui';
 import { TitleBlock } from '~components';
 import { useAccessToken, useRequest } from '~hooks';
+import { Button, Input } from '~ui';
 import { categoryApi } from '~utils/api';
 import { getClassName } from '~utils/helpers';
 
@@ -21,7 +21,10 @@ const AdminCategoryPage = () => {
     isLoading,
     error,
     setCategories,
-  ] = useRequest<CategoryItemWithoutProducts[]>(() => CategoryApi.getAll());
+  ] = useRequest({
+    request: () => categoryApi.getAll(),
+    defaultValue: [],
+  });
   const { register, handleSubmit, reset } = useForm<CategoryCreateForm>({
     defaultValues: {
       title: '',
@@ -31,13 +34,13 @@ const AdminCategoryPage = () => {
 
   const onCreateCategory = async (value: CategoryCreateForm) => {
     try {
-      const category = await CategoryApi.create(value.title, accessToken);
+      const category = await categoryApi.create({ title: value.title }, accessToken);
       reset();
       setCategories((prev) => {
         if (prev) {
           return [...prev, category];
         }
-        return null;
+        return [category];
       });
       alert('Категория создана');
     } catch (err) {
@@ -47,7 +50,7 @@ const AdminCategoryPage = () => {
 
   const onDeleteCategory = async (id: number) => {
     try {
-      await CategoryApi.delete(id, accessToken);
+      await categoryApi.delete({ id }, accessToken);
       setCategories((prev) => prev?.filter((category) => category.id !== id) || null);
       alert('Категория удалена');
     } catch (err) {

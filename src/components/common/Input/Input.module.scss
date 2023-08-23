@@ -8,14 +8,14 @@
   border: 1px var(--color-neutral-2-500) solid;
 
   font-size: 14px;
-  color: var(--color-neutral-2-500);
+  color: var(--color-neutral-1-500);
 
   cursor: text;
 
   &:focus-within {
     border: 1px var(--color-neutral-2-300) solid;
 
-    color: var(--color-neutral-2-300);
+    color: var(--color-neutral-1-300);
   }
 }
 

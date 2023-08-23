@@ -15,7 +15,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
 }) => (
   <article className={s.product}>
     <div className={s.image}>
-      <img src={`${process.env.NEXT_PUBLIC_API_URL}/../${product.img}`} alt="" />
+      {product.img && <img src={`${process.env.NEXT_PUBLIC_API_URL}/../${product.img}`} alt="" />}
     </div>
     <div className={s.infoBlock}>
       <div className={s.info}>
@@ -24,14 +24,14 @@ export const ProductItem: React.FC<ProductItemProps> = ({
             component="h3"
             variant="body3"
           >
-            {product.title}
+            {product.title ? product.title : 'Название отсутствует'}
           </Typography>
           <Typography
             className={s.weight}
             component="span"
             variant="body7"
           >
-            {product.weight} г
+            {product.weight ? product.weight : 0} г
           </Typography>
         </div>
         <Typography
@@ -39,7 +39,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
           component="span"
           variant="body7"
         >
-          {product.foods}
+          {product.foods ? product.foods : 'состав отсутствует'}
         </Typography>
       </div>
       <div className={s.priceBlock}>
@@ -47,7 +47,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
           component="span"
           variant="body2"
         >
-          {product.price} ₽
+          {product.price ? product.price : '0'} ₽
         </Typography>
         {countButton && <CountButton productId={product.id} />}
       </div>

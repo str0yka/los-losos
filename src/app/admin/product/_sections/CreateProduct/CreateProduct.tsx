@@ -2,34 +2,28 @@
 
 import React, { useState } from 'react';
 
-import ProductItem from '@/app/_components/ProductItem/ProductItem';
-import Button from '@/components/common/Button/Button';
-import Input from '@/components/common/Input/Input';
-import { useAccessToken } from '@/hooks/useAccessToken';
-import { useControllerForm } from '@/hooks/useControllerForm';
-import { useRequest } from '@/hooks/useRequest';
-import CategoryApi from '@/http/CategoryApi';
-import ProductApi from '@/http/ProductApi';
+import { ProductItem } from '~components';
+import { useAccessToken, useControllerForm, useRequest } from '~hooks';
+import { Button, Input } from '~ui';
+import { categoryApi, productApi } from '~utils/api';
 
 import s from './CreateProduct.module.scss';
 
-interface CreateProductValues extends Omit<Product, 'id' | 'foods' | 'img'> {}
-
-const CreateProduct = () => {
+export const CreateProduct = () => {
   const accessToken = useAccessToken();
   const [newFood, setNewFood] = useState<string>('');
   const [foods, setFoods] = useState<string[]>([]);
   const [image, setImage] = useState<File | null>(null);
-  const onSubmit = async (formData: CreateProductValues) => {
+  const onSubmit = async (formData: Omit<ProductCreateRequest, 'img' | 'foods'>) => {
     try {
       if (!image || !foods.length) {
         return alert('Нету изображения или отсутствует состав продукта');
       }
 
-      const newProduct = await ProductApi.create({
+      await productApi.create({
         ...formData,
+        foods,
         img: image,
-        foods: JSON.stringify(foods),
       }, accessToken);
       alert('Продукт создан');
     } catch (error) {
@@ -41,7 +35,7 @@ const CreateProduct = () => {
     values,
     getFieldProps,
     handleSubmit,
-  } = useControllerForm<CreateProductValues>({
+  } = useControllerForm<Omit<ProductCreateRequest, 'img' | 'foods'>>({
     defaultValues: {
       title: '',
       price: 0,
@@ -51,7 +45,10 @@ const CreateProduct = () => {
     onSubmit,
   });
 
-  const [categories] = useRequest<CategoryItemWithoutProducts[]>(() => CategoryApi.getAll());
+  const [categories] = useRequest({
+    request: () => categoryApi.getAll(),
+    defaultValue: [],
+  });
 
   const handleAddFood = () => {
     const candidate = foods.find((food) => food === newFood);
@@ -79,7 +76,6 @@ const CreateProduct = () => {
             foods: foods.join(', '),
             img: '',
         }}
-          size="large"
           countButton={false}
         />
       </div>
@@ -202,5 +198,3 @@ const CreateProduct = () => {
     </div>
   );
 };
-
-export default CreateProduct;

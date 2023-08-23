@@ -35,6 +35,16 @@ class CategoryApi {
 
     return response;
   }
+
+  async getAll() {
+    const response = await this.categoryApi.get<ApiResponse<CategoryGetAllResponse>>('/');
+
+    if ('message' in response) {
+      throw new Error(response.message);
+    }
+
+    return response;
+  }
 }
 
 export const categoryApi = new CategoryApi();

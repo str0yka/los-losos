@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
 
-  border: 1px var(--secondaryColorLight) solid;
+  border: 1px var(--color-neutral-2-500) solid;
   border-radius: 10px;
 }
 
@@ -73,9 +73,9 @@
   align-items: center;
   gap: 5px;
 
-  border-bottom: 1px var(--neutralColorDarken) dashed;
+  border-bottom: 1px var(--color-neutral-2-100) dashed;
 
-  color: var(--neutralColorDarken);
+  color: var(--color-neutral-2-100);
 
   cursor: pointer;
 
@@ -94,7 +94,7 @@
       width: 8px;
       height: 1px;
 
-      background-color: var(--neutralColorDarken);
+      background-color: var(--color-neutral-2-100);
     }
 
     &::after {
@@ -107,14 +107,14 @@
   }
 
   &:hover {
-    border-bottom: 1px var(--primaryColor) dashed;
+    border-bottom: 1px var(--color-primary-500) dashed;
 
-    color: var(--primaryColor);
+    color: var(--color-primary-500);
 
     .crossIcon {
       &::after,
       &::before {
-        background-color: var(--primaryColor);
+        background-color: var(--color-primary-500);
       }
     }
   }
@@ -130,11 +130,11 @@
 
     background: none;
     border-radius: 10px;
-    border: 1px var(--secondaryColorLighten) solid;
+    border: 1px var(--color-neutral-2-500) solid;
     outline: none;
 
     option {
-      color: var(--secondaryColor);
+      color: var(--color-neutral-2-800);
     }
   }
 }
@@ -155,18 +155,18 @@
   justify-content: center;
 
   border-radius: 10px;
-  border: 1px var(--secondaryColorLighten) solid;
+  border: 1px var(--color-neutral-2-500) solid;
 
   font-size: 14px;
-  color: var(--secondaryColorLight);
+  color: var(--color-neutral-2-500);
 
   cursor: pointer;
 
   transition: color .2s ease, border-color .2s ease;
 
   &:hover {
-    border: 1px var(--secondaryColorLight) solid;
-    color: var(--neutralColorDarken)
+    border: 1px var(--color-neutral-2-300) solid;
+    color: var(--color-neutral-2-300)
   }
 }
 
@@ -189,7 +189,7 @@
   .form {
     padding: 30px;
 
-    border-left: 1px var(--secondaryColorLight) solid;
+    border-left: 1px var(--color-neutral-2-500) solid;
   }
 }
 

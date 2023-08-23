@@ -39,8 +39,11 @@ class ProductApi {
       }
     }
 
+    formData.set('foods', JSON.stringify(product.foods));
+
    const response = await this.productApiXml.post<ApiResponse<ProductCreateResponse>>('/', {
     headers: { authorization: accessToken },
+    body: formData,
    });
 
    if ('message' in response) {

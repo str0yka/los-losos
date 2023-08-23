@@ -25,3 +25,5 @@ type PromocodeApplyResponse = Omit<Promocode, 'cart'>;
 type PromocodeCancelResponse = {
   success: true;
 };
+
+type PromocodeGetAllResponse = Array<Omit<Promocode, 'cart'>>;

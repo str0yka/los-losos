@@ -47,6 +47,18 @@ class PromocodeApi {
 
     return response;
   }
+
+  async getAll(accessToken: string) {
+    const response = await this.promocodeApi.get<ApiResponse<PromocodeGetAllResponse>>('/', {
+      headers: { authorization: accessToken },
+    });
+
+    if ('message' in response) {
+      throw new Error(response.message);
+    }
+
+    return response;
+  }
 }
 
 export const promocodeApi = new PromocodeApi();

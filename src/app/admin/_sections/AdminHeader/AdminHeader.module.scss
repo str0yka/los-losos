@@ -4,7 +4,7 @@
 
   padding: 18px 0;
 
-  background-color: var(--secondaryColorTransparent);
+  background-color: #0d0d0d5b; // TODO: need variable
   backdrop-filter: blur(20px);
 
   z-index: var(--upperIndex);
@@ -21,7 +21,7 @@
 
       transition: color .2s ease;
       &:hover {
-        color: var(--primaryColor)
+        color: var(--color-primary-500)
       }
     }
   }

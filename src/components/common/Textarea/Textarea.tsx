@@ -8,17 +8,18 @@ import { getClassName } from '~utils/helpers';
 import s from './Textarea.module.scss';
 
 interface TextareaProps extends React.ComponentProps<'textarea'> {
-  maxLength?: number
-  resize: 'noResize' | 'x' | 'y'
+  maxLength?: number;
+  resize: 'noResize' | 'x' | 'y';
 }
 
-export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({
-     className, maxLength, resize, onChange, ...otherProps
-   }, ref) => {
+export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({
+  className,
+  maxLength,
+  resize,
+  onChange,
+  ...otherProps
+}, ref) => {
     const [value, setValue] = useState<string>('');
-    const labelClassName = getClassName(s.label, className);
-    const textareaClassName = getClassName(s.textarea, s[resize]);
 
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
       if (onChange) {
@@ -28,7 +29,7 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     };
 
     return (
-      <label className={labelClassName}>
+      <label className={getClassName(s.label, className)}>
         {maxLength && (
           <Typography
             className={s.textareaLength}
@@ -40,12 +41,10 @@ export const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         <textarea
           {...otherProps}
           ref={ref}
-          className={textareaClassName}
-          maxLength={maxLength}
+          className={getClassName(s.textarea, s[resize])}
           value={value}
           onChange={handleChange}
         />
       </label>
     );
-  },
-);
+  });

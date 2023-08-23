@@ -4,10 +4,10 @@
   display: block;
 
   font-size: 14px;
-  color: var(--color-neutral-2-200);
+  color: var(--color-neutral-1-500);
 
   &:focus-within {
-    color: var(--color-neutral-2-200);
+    color: var(--color-neutral-1-300);
   }
 }
 
@@ -19,14 +19,14 @@
 
   background: none;
   border-radius: 10px;
-  border: 1px var(--color-neutral-2-700) solid;
+  border: 1px var(--color-neutral-2-500) solid;
   outline: none;
 
   font-size: inherit;
   color: inherit;
 
   &:focus {
-    border: 1px var(--color-neutral-2-500) solid;
+    border: 1px var(--color-neutral-2-300) solid;
   }
 }
 
@@ -35,7 +35,7 @@
   right: 10px;
   bottom: 10px;
 
-  color: var(--color-neutral-2-700);
+  color: var(--color-neutral-2-500);
   font-size: inherit;
 }
 

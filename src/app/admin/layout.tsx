@@ -1,19 +1,20 @@
 import React from 'react';
 
-import AdminHeader from '@/app/admin/_components/AdminHeader/AdminHeader';
-import Container from '@/components/common/Container/Container';
+import { Container } from '~ui';
+
+import { AdminHeader } from './_sections';
 
 interface AdminLayoutProps {
   children: React.ReactNode
 }
 
 const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => (
-  <>
+  <main>
     <AdminHeader />
     <Container width="medium">
       {children}
     </Container>
-  </>
+  </main>
 );
 
 export default AdminLayout;

@@ -21,3 +21,8 @@ type CategoryDeleteResponse = {
   id: number;
   title: string;
 };
+
+type CategoryGetAllResponse = Array<{
+  id: number;
+  title: string;
+}>;

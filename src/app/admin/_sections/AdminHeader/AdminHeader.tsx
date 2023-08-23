@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import React from 'react';
 
-import Container from '@/components/common/Container/Container';
+import { Container } from '~ui';
 
 import s from './AdminHeader.module.scss';
 
-const AdminHeader = () => (
+export const AdminHeader = () => (
   <div className={s.header}>
-    <Container>
+    <Container width="medium">
       <ul className={s.list}>
         <li>
           <Link href="/admin/category">Категории</Link>
@@ -22,5 +22,3 @@ const AdminHeader = () => (
     </Container>
   </div>
   );
-
-export default AdminHeader;

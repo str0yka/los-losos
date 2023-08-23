@@ -46,9 +46,7 @@ export const Promocode = () => {
         <div className={s.promocodeInfo}>
           {!promocode?.name && (
             <p className={s.promocodeSubtitle}>
-              Ура! Вы активировали промкод
-              {promocode.code}
-              😊
+              Ура! Вы активировали промкод {promocode.code} 😊
             </p>
           )}
           {promocode?.name && (
