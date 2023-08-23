@@ -31,7 +31,7 @@ export const options: NextAuthOptions = {
 
         if (user.id) {
           return {
-            id: user.id,
+            id: user.id.toString(),
             addres: user.addres,
             phone: user.phone,
             cartId: user.cartId,

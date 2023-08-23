@@ -33,11 +33,10 @@ class ProductApi {
   async create(product: ProductCreateRequest, accessToken: string) {
     const formData = new FormData();
 
-    for (const key in product) {
-      if (key in product) {
-        formData.append(key, product[key]);
-      }
-    }
+    const keys = Object.keys(product) as Array<keyof typeof product>;
+    keys.forEach((key) => {
+      formData.append(key, key === 'img' ? product[key] : JSON.stringify(product[key]));
+    });
 
     formData.set('foods', JSON.stringify(product.foods));
 

@@ -28,7 +28,6 @@ export const CreateProduct = () => {
       alert('Продукт создан');
     } catch (error) {
       alert('Ошибка при создании продукта');
-      console.log(error);
     }
   };
   const {

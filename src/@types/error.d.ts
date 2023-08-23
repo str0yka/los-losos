@@ -3,4 +3,4 @@ interface ApiError {
   message: string;
 }
 
-type ApiResponse<T> = T | ApiError
+type ApiResponse<T> = T | ApiError;

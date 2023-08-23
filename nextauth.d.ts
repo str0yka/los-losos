@@ -5,19 +5,18 @@ declare module 'next-auth' {
   interface Session {
     user: {
       id: number;
-      role: string;
-      password: null; // FIXME
-      addres: string;
       phone: string;
+      addres?: string;
+      role: 'user' | 'admin';
       cartId: number;
       accessToken: string;
     } & DefaultSession;
   }
 
   interface User extends DefaultUser {
-    role: string;
-    addres: string;
     phone: string;
+    addres?: string;
+    role: 'user' | 'admin';
     cartId: number;
     accessToken: string;
   }
@@ -25,9 +24,9 @@ declare module 'next-auth' {
 
 declare module 'next-auth/jwt' {
   interface JWT extends DefaultJWT {
-    role: string;
-    addres: string;
     phone: string;
+    addres?: string;
+    role: 'user' | 'admin';
     cartId: number;
     accessToken: string;
   }

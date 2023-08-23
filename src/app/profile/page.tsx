@@ -17,14 +17,12 @@ const ProfilePage = () => {
     orders,
     isLoading,
     isError,
-  ] = useRequest<OrderGetAllResponse>(
-    () => orderApi.getAll(accessToken),
-    {
+  ] = useRequest({
+      request: () => orderApi.getAll(accessToken),
       dependencies: [status],
       verification: status === 'authenticated',
       defaultValue: [],
-    },
-  );
+  });
 
   if (isLoading) {
     return (
