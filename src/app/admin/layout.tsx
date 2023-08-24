@@ -8,7 +8,7 @@ interface AdminLayoutProps {
   children: React.ReactNode
 }
 
-const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => (
+const AdminLayout: React.FC<AdminLayoutProps> = async ({ children }) => (
   <main>
     <AdminHeader />
     <Container width="medium">

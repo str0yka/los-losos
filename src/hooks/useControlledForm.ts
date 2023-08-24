@@ -1,5 +1,8 @@
 import {
- ChangeEvent, ComponentProps, FormEvent, useState,
+ ChangeEvent,
+ ComponentProps,
+ FormEvent,
+ useState,
 } from 'react';
 
 interface UseControllerFormParams<Values> {
@@ -8,7 +11,7 @@ interface UseControllerFormParams<Values> {
   validate?: (values: Values) => { [Key in keyof Values]?: string | null } | null
 }
 
-export const useControllerForm = <Values>({ // TODO: useControlleDForm
+export const useControlledForm = <Values>({
   defaultValues,
   onSubmit,
   validate = () => null,

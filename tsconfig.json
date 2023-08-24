@@ -20,7 +20,9 @@
       }
     ],
     "paths": {
+      "~pages/*": ["./src/app/*"],
       "~components": ["./src/components"],
+      "~providers": ["./src/components/providers"],
       "~ui": ["./src/components/common"],
       "~ui/*": ["./src/components/common/*"],
       "~ui/icons": ["./src/components/common/icons"],

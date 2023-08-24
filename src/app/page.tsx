@@ -22,7 +22,7 @@ const getCategories = async (): Promise<[ProductGetAllResponse, string]> => {
   return [categories, errorMessage];
 };
 
-const Home = async () => {
+const HomePage = async () => {
   const [categories, errorMessage] = await getCategories();
   return (
     <main>
@@ -45,4 +45,4 @@ const Home = async () => {
     </main>
   );
 };
-export default Home;
+export default HomePage;

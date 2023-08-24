@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { ProductItem, Typography } from '~components';
+import { ProductItem } from '~components';
+import { Typography } from '~ui';
 
 import s from './ProductList.module.scss';
 

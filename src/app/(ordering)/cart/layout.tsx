@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import React from 'react';
 
-import { Container, DeleteFromCartButton, TitleBlock } from '~components';
+import { DeleteFromCartButton, TitleBlock } from '~components';
+import { Container } from '~ui';
 
 export const metadata: Metadata = {
   title: 'Корзина | Лось-Лосось',

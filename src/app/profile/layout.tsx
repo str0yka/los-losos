@@ -4,6 +4,8 @@ import React from 'react';
 import { TitleBlock } from '~components';
 import { Container } from '~ui';
 
+import { SignOutButton } from './_components';
+
 export const metadata: Metadata = {
   title: 'Профиль | Лось-Лосось',
 };
@@ -13,13 +15,16 @@ interface ProfileLayoutProps {
 }
 
 const ProfileLayout: React.FC<ProfileLayoutProps> = ({ children }) => (
-  <Container width="medium">
-    <TitleBlock
-      backTo="/"
-      title="Профиль"
-    />
-    {children}
-  </Container>
-  );
+  <main>
+    <Container width="medium">
+      <TitleBlock
+        backTo="/"
+        title="Профиль"
+        rightSide={<SignOutButton />}
+      />
+      {children}
+    </Container>
+  </main>
+);
 
 export default ProfileLayout;

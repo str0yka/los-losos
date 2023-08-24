@@ -7,10 +7,22 @@ interface LinkButtonProps extends ButtonProps {
   href: string
 }
 
-export const LinkButton: React.FC<LinkButtonProps> = ({ href, ...buttonProps }) => (
-  <Link
-    href={!buttonProps.disabled ? href : ''}
-  >
-    <Button {...buttonProps}>{buttonProps.children}</Button>
-  </Link>
+export const LinkButton: React.FC<LinkButtonProps> = ({ href, disabled, ...buttonProps }) => (
+  <>
+    {!disabled && (
+      <Link
+        href={href}
+      >
+        <Button {...buttonProps}>{buttonProps.children}</Button>
+      </Link>
+    )}
+    {disabled && (
+      <Button
+        {...buttonProps}
+        disabled
+      >
+        {buttonProps.children}
+      </Button>
+    )}
+  </>
 );

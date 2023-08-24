@@ -1,12 +1,4 @@
-import { withAuth } from 'next-auth/middleware';
-
-export default withAuth(
-  () => {},
-  {
-    callbacks: {
-      authorized: ({ token }) => token?.role === 'admin',
-    },
-  },
-);
+// eslint-disable-next-line no-restricted-exports
+export { default } from 'next-auth/middleware';
 
 export const config = { matcher: ['/admin', '/profile', '/order'] };

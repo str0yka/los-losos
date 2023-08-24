@@ -23,6 +23,7 @@ class ProductApi {
         revalidate: 60,
       },
     });
+
     if ('message' in response) {
       throw new Error(response.message);
     }

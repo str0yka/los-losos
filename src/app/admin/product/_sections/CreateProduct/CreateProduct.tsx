@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 
 import { ProductItem } from '~components';
-import { useAccessToken, useControllerForm, useRequest } from '~hooks';
+import { useAccessToken, useControlledForm, useRequest } from '~hooks';
 import { Button, Input } from '~ui';
 import { categoryApi, productApi } from '~utils/api';
 
@@ -34,7 +34,7 @@ export const CreateProduct = () => {
     values,
     getFieldProps,
     handleSubmit,
-  } = useControllerForm<Omit<ProductCreateRequest, 'img' | 'foods'>>({
+  } = useControlledForm<Omit<ProductCreateRequest, 'img' | 'foods'>>({
     defaultValues: {
       title: '',
       price: 0,
@@ -86,36 +86,21 @@ export const CreateProduct = () => {
           <li className={s.titleBlock}>
             <span>Название продукта</span>
             <Input
-              {...getFieldProps(
-                'title',
-                {
-                  required: true,
-                },
-              )}
+              {...getFieldProps('title', { required: true })}
               placeholder="тут название..."
             />
           </li>
           <li className={s.priceBlock}>
             <span>Цена</span>
             <Input
-              {...getFieldProps(
-                'price',
-                {
-                  required: true,
-                },
-              )}
+              {...getFieldProps('price', { required: true })}
               placeholder="тут цена..."
             />
           </li>
           <li className={s.weightBlock}>
             <span>Вес</span>
             <Input
-              {...getFieldProps(
-                'weight',
-                {
-                  required: true,
-                },
-              )}
+              {...getFieldProps('weight', { required: true })}
               placeholder="в граммах"
             />
           </li>

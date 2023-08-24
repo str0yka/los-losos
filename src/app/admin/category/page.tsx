@@ -11,10 +11,6 @@ import { getClassName } from '~utils/helpers';
 
 import s from './page.module.scss';
 
-interface CategoryCreateForm {
-  title: string
-}
-
 const AdminCategoryPage = () => {
   const [
     categories,
@@ -25,14 +21,14 @@ const AdminCategoryPage = () => {
     request: () => categoryApi.getAll(),
     defaultValue: [],
   });
-  const { register, handleSubmit, reset } = useForm<CategoryCreateForm>({
+  const { register, handleSubmit, reset } = useForm<CategoryCreateRequest>({
     defaultValues: {
       title: '',
     },
   });
   const accessToken = useAccessToken();
 
-  const onCreateCategory = async (value: CategoryCreateForm) => {
+  const onCreateCategory = async (value: CategoryCreateRequest) => {
     try {
       const category = await categoryApi.create({ title: value.title }, accessToken);
       reset();
