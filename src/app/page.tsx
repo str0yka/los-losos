@@ -4,6 +4,7 @@ import React from 'react';
 import { Container, Typography } from '~ui';
 import { productApi } from '~utils/api';
 
+import { CartButton } from './_components';
 import { HomeHeader, HomeSlider, ProductList } from './_sections';
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ const HomePage = async () => {
   const [categories, errorMessage] = await getCategories();
   return (
     <main>
+      <CartButton />
       <HomeHeader categories={categories} />
       <Container width="wide">
         <HomeSlider />
