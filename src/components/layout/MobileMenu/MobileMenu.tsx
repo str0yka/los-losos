@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -12,9 +12,15 @@ import { getClassName } from '~utils/helpers';
 import s from './MobileMenu.module.scss';
 
 export const MobileMenu = () => {
+  const router = useRouter();
   const dispatch = useAppDispatch();
   const onCloseMenu = () => dispatch(close());
   const { isOpen } = useSelector(getMenu);
+
+  const handleNavigate = (route: string) => {
+    router.push(route);
+    dispatch(close());
+  };
 
   return (
     <div className={getClassName(s.wrapper, isOpen && s.open)}>
@@ -29,35 +35,34 @@ export const MobileMenu = () => {
           </button>
           <ul className={s.list}>
             <li className={s.listItem}>
-              <Link
-                className={s.listItemLink}
-                href="/cart"
+              <button
+                className={s.listItemButton}
+                onClick={() => handleNavigate('/cart')}
               >
                 Корзина
-              </Link>
+              </button>
             </li>
             <li className={s.listItem}>
-              <Link
-                className={s.listItemLink}
-                href="/orders"
+              <button
+                className={s.listItemButton}
+                onClick={() => handleNavigate('/profile')}
               >
                 Мои заказы
-              </Link>
+              </button>
             </li>
             <li className={s.listItem}>
-              <Link
-                className={s.listItemLink}
-                href="/" // TODO: /about/delivery
+              <button
+                className={s.listItemButton}
+                onClick={() => handleNavigate('/')} // TODO: /about/delivery
               >
                 Доставка и оплата
-              </Link>
+              </button>
             </li>
             <li className={s.listItem}>
-              <a
-                className={s.listItemLink}
-                href="tel:88005553535"
-              >
-                Связаться с нами
+              <a href="tel:88005553535">
+                <button className={s.listItemButton}>
+                  Связаться с нами
+                </button>
               </a>
             </li>
           </ul>

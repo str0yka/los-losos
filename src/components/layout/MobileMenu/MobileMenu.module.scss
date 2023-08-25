@@ -86,9 +86,7 @@
   }
 }
 
-.listItemLink {
-  display: block;
-
+.listItemButton {
   padding: 10px 0;
 
   width: 100%;
@@ -97,6 +95,8 @@
   font-size: 14px;
   color: var(--color-neutral-2-800);
   text-align: center;
+
+  cursor: pointer;
 }
 
 @media (min-width: 320px) {
