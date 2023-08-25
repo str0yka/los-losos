@@ -29,8 +29,8 @@
 .closeMenuButton {
   align-self: flex-end;
 
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
 
   display: flex;
   align-items: center;
@@ -97,13 +97,6 @@
   text-align: center;
 
   cursor: pointer;
-}
-
-@media (min-width: 320px) {
-  .closeMenuButton {
-    width: 32px;
-    height: 32px;
-  }
 }
 
 @media (min-width: 375px) {

@@ -40,7 +40,7 @@ export const OrderForm = () => {
       await dispatch(fetchConfirmOrder({ formData, accessToken }));
       router.push('/profile');
     } catch (error) {
-      // alert('Ошибка при оформление заказа') // TODO: кастомный алерт
+      alert('Ошибка при оформление заказа'); // TODO: кастомный алерт
     }
   };
 

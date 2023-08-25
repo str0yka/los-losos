@@ -104,8 +104,8 @@
       }
 
       &:first-child {
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
+        border-top-left-radius: var(--count-button-border-radius);
+        border-bottom-left-radius: var(--count-button-border-radius);
 
         &::after {
           content: "";
@@ -125,8 +125,8 @@
       }
 
       &:last-child {
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
+        border-top-right-radius: var(--count-button-border-radius);
+        border-bottom-right-radius: var(--count-button-border-radius);
 
         &::after,
         &::before {

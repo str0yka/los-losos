@@ -22,7 +22,7 @@ export const useHandleCart = (productId: number) => {
       );
     } catch (err) {
       // console.log(err);
-      // alert('Упс! Что-то пошло не так'); // TODO: кастомный alert
+      alert('Упс! Что-то пошло не так'); // TODO: кастомный alert
     } finally {
       setIsLoading(false);
     }

@@ -27,7 +27,7 @@ export const Promocode = () => {
     try {
       await dispatch(fetchApplyPromocode({ code, accessToken }));
     } catch (error) {
-      // alert('Такого промокода не существует'); // TODO: сделать свой алерт
+      alert('Такого промокода не существует'); // TODO: сделать свой алерт
     }
   };
 
@@ -35,7 +35,7 @@ export const Promocode = () => {
     try {
       await dispatch(fetchCancelPromocode(accessToken));
     } catch (error) {
-      // alert('Такого промокода не существует'); // TODO: сделать свой алерт
+      alert('Такого промокода не существует'); // TODO: сделать свой алерт
     }
   };
 

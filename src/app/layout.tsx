@@ -18,7 +18,6 @@ export const metadata: Metadata = {
 // 5. Для изображений использовать <Image></Image>
 // 33. Reselect
 // 36. Обработать случай, когда промокод не верный
-// 44. main у page.tsx
 
 interface RootLayoutProps {
   children: React.ReactNode;
