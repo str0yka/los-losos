@@ -4,7 +4,7 @@ import '~styles/zero.scss';
 import { Metadata } from 'next';
 import React from 'react';
 
-import { Footer, Header } from '~components';
+import { Footer, Header, MobileMenu } from '~components';
 import { museoSans } from '~fonts';
 import { AuthProvider, StoreProvider } from '~providers';
 
@@ -33,6 +33,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => (
       <StoreProvider>
         <body>
           <Header />
+          <MobileMenu />
           {children}
           <Footer />
         </body>

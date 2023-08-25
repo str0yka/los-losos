@@ -1,13 +1,9 @@
 import Link from 'next/link';
 import React from 'react';
 
-import {
-  BurgetButton,
-  Container,
-  LinkButton,
-  Typography,
-} from '~ui';
+import { Container, LinkButton, Typography } from '~ui';
 
+import { OpenMenuButton } from './components';
 import s from './Header.module.scss';
 
 export const Header = () => (
@@ -46,7 +42,7 @@ export const Header = () => (
         >
           МОИ ЗАКАЗЫ
         </LinkButton>
-        <BurgetButton className={s.burger} />
+        <OpenMenuButton className={s.openMenuButton} />
       </div>
     </Container>
   </header>

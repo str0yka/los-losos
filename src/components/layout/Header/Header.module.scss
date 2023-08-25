@@ -37,8 +37,8 @@
 }
 
 @media (min-width: 768px) {
-  .burger {
-    display: none;
+  .openMenuButton {
+    display: none !important;
   }
 
   .header {

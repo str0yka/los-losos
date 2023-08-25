@@ -1,0 +1,75 @@
+.openMenuButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+  background-color: var(--color-primary-500);
+
+  cursor: pointer;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+
+    width: 12px;
+    height: 1px;
+
+    background-color: var(--color-neutral-2-800);
+    border-radius: 1px;
+
+    &::after,
+    &::before {
+      content: '';
+
+      width: 12px;
+      height: 1px;
+
+      position: absolute;
+
+      background-color: var(--color-neutral-2-800);
+      border-radius: 1px;
+    }
+
+    &::after {
+      transform: translateY(3px);
+    }
+
+    &::before {
+      transform: translateY(-3px);
+    }
+  }
+
+  &:hover {
+    background-color: var(--color-primary-600);
+  }
+
+  &:active {
+    background-color: var(--color-primary-700);
+  }
+}
+
+@media (min-width: 320px) {
+  .openMenuButton {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 375px) {
+  .openMenuButton {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (min-width: 480px) {
+  .openMenuButton {
+    width: 38px;
+    height: 38px;
+  }
+}
