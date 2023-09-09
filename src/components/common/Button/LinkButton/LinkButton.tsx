@@ -1,18 +1,16 @@
 import Link from 'next/link';
 import React from 'react';
 
-import { Button, ButtonProps } from '..';
+import { Button, ButtonProps } from '../Button/Button';
 
 interface LinkButtonProps extends ButtonProps {
-  href: string
+  href: string;
 }
 
 export const LinkButton: React.FC<LinkButtonProps> = ({ href, disabled, ...buttonProps }) => (
   <>
     {!disabled && (
-      <Link
-        href={href}
-      >
+      <Link href={href}>
         <Button {...buttonProps}>{buttonProps.children}</Button>
       </Link>
     )}
